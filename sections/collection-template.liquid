@@ -120,6 +120,172 @@
 						</script>
 					{% endif %}
 
+					{% for block in section.blocks %}
+						{% assign shop_by_tags_1_title = block.settings.shop_by_tags_1_title %}
+    					{% assign enable_shop_by_tags_1 = block.settings.enable_shop_by_tags_1 %}
+						{% assign shop_by_tags_2_title = block.settings.shop_by_tags_2_title %}
+    					{% assign shop_by_tags_2_list_tags = block.settings.shop_by_tags_2_list_tags %}
+						{%- case block.type %}
+						{% when 'block_filter_size' %}
+						<div class="sidebar-custom sidebar-tag size">
+					      {% assign tags = shop_by_tags_2_list_tags | split: ',' %}
+					      <div class="title">
+					        <h3>
+					          <span>{{ shop_by_tags_2_title }}</span>
+					        </h3>
+					      </div>
+					      <div class="content">
+					        <ul class="widget-content">
+					          {% for t in tags %}
+					          {% assign tag = t | strip %}
+					          {% assign tag_value = tag | handleize %}
+					          {% if current_tags contains tag %}
+					          <li><input type="checkbox" value="{{ tag_value }}" checked/><label>{{tag}}</label></li>
+					          {% elsif collection.tags contains tag %}
+					          <li><input type="checkbox" value="{{ tag_value }}"/><label>{{tag}}</label></li>
+					          {% endif %}
+					          {% endfor %}
+					        </ul>
+					      </div>
+					    </div>
+					    {% when 'block_filter_color' %}
+					    <div class="sidebar-custom sidebar-tag color">
+					      {% assign tags = shop_by_tags_1_list_tags | split: ',' %}
+					      <div class="title">
+					        <h3>
+					          <span>{{ shop_by_tags_1_title }}</span>
+					        </h3>
+					      </div>
+					      <div class="content">
+					        <ul class="widget-content">
+					          {% if block.settings.shop_by_color_text_1 != blank %}
+					          {% assign tag = block.settings.shop_by_color_text_1|strip %} 
+					          {% if collection.tags contains tag %}
+					          <li class="col-xs-12">
+					            {% assign tag_value = tag | handleize %}
+					            <input type="checkbox" value="{{ tag_value }}" {% if current_tags contains tag %}checked{% endif %}/>
+					            <a href="javascript:void(0)"  {% if current_tags contains tag %} class="active" {% endif %} title="{{tag}}">
+					              {{ block.settings.color-1 | img_url: '160x160' | img_tag  }}{{ tag_value }}
+					            </a>
+					          </li>
+					          {% endif %}
+					          {% endif %}
+					          {% if block.settings.shop_by_color_text_2 != blank %}
+					          {% assign tag = block.settings.shop_by_color_text_2|strip %} 
+					          {% if collection.tags contains tag %}
+					          <li class="col-xs-12">
+					            {% assign tag_value = tag | handleize %}
+					            <input type="checkbox" value="{{ tag_value }}" {% if current_tags contains tag %}checked{% endif %}/>
+					            <a href="javascript:void(0)"  {% if current_tags contains tag %} class="active" {% endif %} title="{{tag}}">
+					              {{ block.settings.color-2 | img_url: '160x160' | img_tag  }}{{ tag_value }}
+					            </a>
+					          </li>
+					          {% endif %}
+					          {% endif %}
+					          {% if block.settings.shop_by_color_text_3 != blank %}
+					          {% assign tag = block.settings.shop_by_color_text_3|strip %} 
+					          {% if collection.tags contains tag %}
+					          <li class="col-xs-12">
+					            {% assign tag_value = tag | handleize %}
+					            <input type="checkbox" value="{{ tag_value }}" {% if current_tags contains tag %}checked{% endif %}/>
+					            <a href="javascript:void(0)"  {% if current_tags contains tag %} class="active" {% endif %} title="{{tag}}">
+					              {{ block.settings.color-3 | img_url: '160x160' | img_tag  }}{{ tag_value }}
+					            </a>
+					          </li>
+					          {% endif %}
+					          {% endif %}
+					          {% if block.settings.shop_by_color_text_4 != blank %}
+					          {% assign tag = block.settings.shop_by_color_text_4|strip %} 
+					          {% if collection.tags contains tag %}
+					          <li class="col-xs-12">
+					            {% assign tag_value = tag | handleize %}
+					            <input type="checkbox" value="{{ tag_value }}" {% if current_tags contains tag %}checked{% endif %}/>
+					            <a href="javascript:void(0)"  {% if current_tags contains tag %} class="active" {% endif %} title="{{tag}}">
+					              {{ block.settings.color-4 | img_url: '160x160' | img_tag  }}{{ tag_value }}
+					            </a>
+					          </li>
+					          {% endif %}
+					          {% endif %}
+					          {% if block.settings.shop_by_color_text_5 != blank %}
+					          {% assign tag = block.settings.shop_by_color_text_5|strip %} 
+					          {% if collection.tags contains tag %}
+					          <li class="col-xs-12">
+					            {% assign tag_value = tag | handleize %}
+					            <input type="checkbox" value="{{ tag_value }}" {% if current_tags contains tag %}checked{% endif %}/>
+					            <a href="javascript:void(0)"  {% if current_tags contains tag %} class="active" {% endif %} title="{{tag}}">
+					              {{ block.settings.color-5 | img_url: '160x160' | img_tag  }}{{ tag_value }}
+					            </a>
+					          </li>
+					          {% endif %}
+					          {% endif %}
+					          {% if block.settings.shop_by_color_text_6 != blank %}
+					          {% assign tag = block.settings.shop_by_color_text_6|strip %} 
+					          {% if collection.tags contains tag %}
+					          <li class="col-xs-12">
+					            {% assign tag_value = tag | handleize %}
+					            <input type="checkbox" value="{{ tag_value }}" {% if current_tags contains tag %}checked{% endif %}/>
+					            <a href="javascript:void(0)"  {% if current_tags contains tag %} class="active" {% endif %} title="{{tag}}">
+					              {{ block.settings.color-6 | img_url: '160x160' | img_tag  }}{{ tag_value }}
+					            </a>
+					          </li>
+					          {% endif %}
+					          {% endif %}
+					          {% if block.settings.shop_by_color_text_7 != blank %}
+					          {% assign tag = block.settings.shop_by_color_text_7|strip %} 
+					          {% if collection.tags contains tag %}
+					          <li class="col-xs-12">
+					            {% assign tag_value = tag | handleize %}
+					            <input type="checkbox" value="{{ tag_value }}" {% if current_tags contains tag %}checked{% endif %}/>
+					            <a href="javascript:void(0)"  {% if current_tags contains tag %} class="active" {% endif %} title="{{tag}}">
+					              {{ block.settings.color-7 | img_url: '160x160' | img_tag  }}{{ tag_value }}
+					            </a>
+					          </li>
+					          {% endif %}
+					          {% endif %}   
+					          {% if block.settings.shop_by_color_text_8 != blank %}
+					          {% assign tag = block.settings.shop_by_color_text_8|strip %} 
+					          {% if collection.tags contains tag %}
+					          <li class="col-xs-12">
+					            {% assign tag_value = tag | handleize %}
+					            <input type="checkbox" value="{{ tag_value }}" {% if current_tags contains tag %}checked{% endif %}/>
+					            <a href="javascript:void(0)"  {% if current_tags contains tag %} class="active" {% endif %} title="{{tag}}">
+					              {{ block.settings.color-8 | img_url: '160x160' | img_tag  }}{{ tag_value }}
+					            </a>
+					          </li>
+					          {% endif %}
+					          {% endif %}   
+					          {% if block.settings.shop_by_color_text_9 != blank %}
+					          {% assign tag = block.settings.shop_by_color_text_9|strip %} 
+					          {% if collection.tags contains tag %}
+					          <li class="col-xs-12">
+					            {% assign tag_value = tag | handleize %}
+					            <input type="checkbox" value="{{ tag_value }}" {% if current_tags contains tag %}checked{% endif %}/>
+					            <a href="javascript:void(0)"  {% if current_tags contains tag %} class="active" {% endif %} title="{{tag}}">
+					              {{ block.settings.color-9 | img_url: '160x160' | img_tag  }}{{ tag_value }}
+					            </a>
+					          </li>
+					          {% endif %}
+					          {% endif %}
+					          {% if block.settings.shop_by_color_text_10 != blank %}
+					          {% assign tag = block.settings.shop_by_color_text_10|strip %} 
+					          {% if collection.tags contains tag %}
+					          <li class="col-xs-12">
+					            {% assign tag_value = tag | handleize %}
+					            <input type="checkbox" value="{{ tag_value }}" {% if current_tags contains tag %}checked{% endif %}/>
+					            <a href="javascript:void(0)"  {% if current_tags contains tag %} class="active" {% endif %} title="{{tag}}">
+					              {{ block.settings.color-10 | img_url: '160x160' | img_tag  }}{{ tag_value }}
+					            </a>
+					          </li>
+					          {% endif %}
+					          {% endif %}
+
+					        </ul>
+					      </div>
+					    </div>
+						{% endcase %}
+					{% endfor %}
+					<div class="collection-sidebar-filter"></div>
+
 
 			</div>
 
@@ -814,6 +980,154 @@
 		"type": "paragraph",
 		"content": "You will need to install Shopify's [Product Reviews app](https://apps.shopify.com/product-reviews) before enabling this option."
 	}
+  ],
+  "blocks": [
+  	{
+      "type": "block_filter_size",
+      "name": "Filter By Size",
+      "settings": [
+          
+        {
+          "type": "text",
+          "id": "shop_by_tags_2_title",
+          "label": "Shop by tags 2 title",
+          "default": "Size",
+          "info": "i.e \"Shop by Size\"."
+        },
+        {
+          "type": "text",
+          "id": "shop_by_tags_2_list_tags",
+          "label": "Shop by tags 2 list",
+          "default": "8, 10, 12, 14, 16, 18, 20",
+          "info": "Separate by a comma, i.e \"XS, S, M, L, XL\"."
+        }
+      ]
+    },
+    {
+      "type": "block_filter_color",
+      "name": "Filter By Color",
+      "settings": [
+          
+        {
+          "type": "text",
+          "id": "shop_by_tags_1_title",
+          "label": "Shop by tags 1 title",
+          "default": "Shop By Color",
+          "info": "i.e \"Shop by Color\"."
+        },
+        {
+          "type": "text",
+          "id": "shop_by_color_text_1",
+          "label": "Shop by color text 1",
+          "default": "Beige",
+          "info": "i.e \"Beige\"."
+        },
+        {
+          "type": "image_picker",
+          "id": "color-1",
+          "label": "Shop by color image 1"
+        },
+        {
+          "type": "text",
+          "id": "shop_by_color_text_2",
+          "label": "Shop by color text 2",
+          "default": "Red"
+        },
+        {
+          "type": "image_picker",
+          "id": "color-2",
+          "label": "Shop by color image 2"
+        },
+        {
+          "type": "text",
+          "id": "shop_by_color_text_3",
+          "label": "Shop by color text 3",
+          "default": "White"
+        },
+        {
+          "type": "image_picker",
+          "id": "color-3",
+          "label": "Shop by color image 3"
+        },
+        {
+          "type": "text",
+          "id": "shop_by_color_text_4",
+          "label": "Shop by color text 4",
+          "default": "Pink"
+        },
+        {
+          "type": "image_picker",
+          "id": "color-4",
+          "label": "Shop by color image 4"
+        },
+        {
+          "type": "text",
+          "id": "shop_by_color_text_5",
+          "label": "Shop by color text 5",
+          "default": "Silver"
+        },
+        {
+          "type": "image_picker",
+          "id": "color-5",
+          "label": "Shop by color image 5"
+        },
+        {
+          "type": "text",
+          "id": "shop_by_color_text_6",
+          "label": "Shop by color text 6",
+          "default": "Blue"
+        },
+        {
+          "type": "image_picker",
+          "id": "color-6",
+          "label": "Shop by color image 6"
+        },
+        {
+          "type": "text",
+          "id": "shop_by_color_text_7",
+          "label": "Shop by color text 7",
+          "default": "Gray"
+        },
+        {
+          "type": "image_picker",
+          "id": "color-7",
+          "label": "Shop by color image 7"
+        },
+        {
+          "type": "text",
+          "id": "shop_by_color_text_8",
+          "label": "Shop by color text 8",
+          "default": "Black"
+        },
+        {
+          "type": "image_picker",
+          "id": "color-8",
+          "label": "Shop by color image 8"
+        },
+        {
+          "type": "text",
+          "id": "shop_by_color_text_9",
+          "label": "Shop by color text 9",
+          "default": "Green"
+        },
+        {
+          "type": "image_picker",
+          "id": "color-9",
+          "label": "Shop by color image 9"
+        },
+        {
+          "type": "text",
+          "id": "shop_by_color_text_10",
+          "label": "Shop by color text 10"
+        },
+        {
+          "type": "image_picker",
+          "id": "color-10",
+          "label": "Shop by color image 10"
+        }
+
+      ]
+    }
   ]
 }
 {% endschema %}

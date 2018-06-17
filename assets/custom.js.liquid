@@ -1955,3 +1955,91 @@ function load_SPB_show() {
       $('.shopify-payment-button').show();
       $("#ShopNowContainer #AddToCart").removeClass('full-width-button');
 }
+
+function sidebarMapData(n) {
+  var rs = $(".collection-main-body .collection-main-body-inner");
+  if (rs.length == 0) {
+    rs = $(".collection-main-body .product-list")
+  }
+  var is = $(n).find(".collection-main-body .products-grids");
+  if (is.length == 0) {
+    is = $(n).find(".collection-main-body .product-list")
+  }
+  var cart = $(".collection-main-body .collection-main-body-inner");
+  if (cart.length == 0) {
+    cart = $(".collection-main-body .product-list")
+  }
+  var i = $(n).find(".collection-main-body .collection-main-body-inner");
+  if (i.length == 0) {
+    i = $(n).find(".collection-main-body .product-list")
+  }
+  if (i.length > 0 && i.hasClass("collection-main-body-inner")) {
+    if (window.product_image_resize) {
+      i.find("img").fakecrop({
+        fill: window.images_size.is_crop,
+        widthSelector: ".collection-main-body-inner .grid-item .grid-view-item-image",
+        ratioWrapper: window.images_size
+      })
+    }
+  }
+  cart.replaceWith(i);
+  rs.replaceWith(is);
+  $(".collection-sidebar-wrapper").replaceWith($(n).find(".collection-sidebar-wrapper"))
+}
+
+function sidebarGetContent(n) {
+	$.ajax({
+    type: "get",
+    url: n,
+    beforeSend: function() {
+    },
+    success: function(e) {
+      sidebarMapData(e);
+
+    },
+    error: function(n, cart) {
+      console.log('error loading');
+    }
+  })
+}
+
+$(document).ready(function() {
+	$('body').on('click', '.sidebar-tag a, .sidebar-tag label', function(e) {
+    var r = [];
+    if (Shopify.queryParams.constraint) {
+      r = Shopify.queryParams.constraint.split("+")
+    }
+    if (!window.enable_sidebar_multiple_choice && !$(this).prev().is(":checked")) {
+      var i = $(this).parents(".sidebar-tag").find("input:checked");
+      if (i.length > 0) {
+        if (s) {
+          var o = r.indexOf(s);
+          if (o >= 0) {
+            r.splice(o, 1)
+          }
+        }
+      }
+    }
+    var s = $(this).prev().val();
+    if (s) {
+      var o = r.indexOf(s);
+      if (o >= 0) {
+        r.splice(o, 1)
+      } else {
+        r.push(s)
+      }
+    }
+    if (r.length) {
+      Shopify.queryParams.constraint = r.join("+")
+    } else {
+      delete Shopify.queryParams.constraint
+    }
+    delete Shopify.queryParams.page;
+		var n = sidebarCreateUrl();
+    History.pushState({
+	    param: Shopify.queryParams
+		}, n, n);
+		sidebarGetContent(n);
+    e.preventDefault()
+  });
+});

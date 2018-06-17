@@ -562,6 +562,15 @@ timber.Drawers = (function () {
 $(timber.init);
 document.addEventListener('shopify:section:load', timber.init);
 
+function sidebarCreateUrl(e) {
+	var n = $.param(Shopify.queryParams).replace(/%2B/g, "+");
+	console.log(n);
+  if (e) {
+    if (n != "") return e + "?" + n;
+    else return e
+      }
+  return location.pathname + "?" + n
+}
 
 //-- Additional functionality
 $(document).ready(function(){

@@ -207,22 +207,31 @@
         </div>
         </div>
 
-        <div class="product-links">
+        <div class="product-links tabs-box">
           <ul class="list-links">
             <li>
-              <a href="#">Free Shipping</a>
+              <a href="#tab-free-shipping" data-toggle="tab">Free Shipping</a>
             </li>
             <li>
-              <a href="#">Returns Policy</a>
+              <a href="#tab-returns-policy" data-toggle="tab">Returns Policy</a>
             </li>
             <li>
-              <a href="#">Size Guide</a>
+              <a href="#tab-size-guide" data-toggle="tab">Size Guide</a>
             </li>
           </ul>
+          <div class="tab-content">
+	        	<div class="tab-panel active" id="tab-free-shipping">
+	        		{{ section.settings.free_shipping_content }}
+	        	</div>
+	        	<div class="tab-panel" id="tab-returns-policy">
+	        		{{ section.settings.returns_policy_content }}
+	        	</div>
+	        	<div class="tab-panel" id="tab-size-guide">
+	        		{{ section.settings.size_guide_content }}
+	        	</div>
+	        </div>
         </div>
-
         
-
           {% endform %}
           </div>
 
@@ -609,11 +618,10 @@
           <div class="tab-content">
 
             <div class="tab-panel active" id="tab-proddesc">
-              <p class="intro">One of our most fashion-forward shapes of the season: A true straight leg that’s cropped right above the ankle, with a clean step hem that shows extra ankle.</p>
-              <p>One of our most fashion-forward shapes of the season: A true straight leg that’s cropped right above the ankle, with a clean step hem that shows extra ankle at the front with self fabric facing toward the back. In black rigid denim. Button fly. Please note: This product is in rigid denim. We recommend ordering a size up from your normal size. The fabric will stretch over time to conform to your unique shape.</p>
+            	{{ product.metafields["global"]["full_description"] }}
             </div>
             <div class="tab-panel" id="tab-sizeguide">
-              <p>Size-guide</p>
+              {{ section.settings.size_guide_content }}
             </div>
             
           </div>
@@ -755,6 +763,25 @@
       "label": "Change variant based on the thumbnail",
       "default": false
     },
+    {
+    	"type": "header",
+    	"content": "Contents"
+    },
+    {
+		"type": "richtext",
+		"id": "free_shipping_content",
+		"label": "Free Shipping"
+	},
+	{
+		"type": "richtext",
+		"id": "returns_policy_content",
+		"label": "Returns Policy"
+	},
+	{
+		"type": "richtext",
+		"id": "size_guide_content",
+		"label": "Size Guide"
+	},
     {
       "type": "header",
       "content": "Reviews"
