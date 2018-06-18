@@ -1,0 +1,78 @@
+<div class="faqs">
+    {% assign expand_questions = section.settings.expand_questions %}
+
+
+    {% for block in section.blocks %}
+
+        {% case block.type %}
+
+            {% when 'separator' %}
+                <h3> {{ block.settings.title }} </h3>
+
+            {% when 'question' %}
+            <dl class="list-faqs">
+                <dt> {{ block.settings.title }} </dt>
+                <dd> {{ block.settings.answer }} </dt>
+            </dl>
+
+        {% endcase %}
+
+    {% endfor %}
+
+
+</div>
+
+{% schema %}
+{
+  "name": "FAQs",
+  "settings": [
+    {
+      "id": "faq-questions",
+      "type": "checkbox",
+      "label": "Expand all questions by default",
+      "default": false
+    }
+    ],
+    "blocks": [
+      {
+        "type": "separator",
+        "name": "Section separator",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading"
+          }
+        ]
+      },
+      {
+        "type": "question",
+        "name": "Question",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Question"
+          },
+          {
+            "type": "richtext",
+            "id": "answer",
+            "label": "Answer"
+          }
+        ]
+      }
+    
+  ]
+}
+{% endschema %}
+
+
+{% javascript %}
+(function() {
+  $('body').on('click', '.list-faqs dt', function() {
+    $(this).next('dd').slideToggle(300).toggleClass('active');
+    $(this).toggleClass('active');
+  });
+ 
+}());
+{% endjavascript %}

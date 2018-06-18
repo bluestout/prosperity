@@ -350,5 +350,11 @@
       "continue": "Continuar",
       "powered_by_html": "Esta tienda está patrocinada por <a href=\"http:\/\/www.shopify.com\">Shopify<\/a>"
     }
+  },
+  "socialshopwave": {
+    "add_to_cart": "Add To Cart",
+    "adding_to_cart": "Adding...",
+    "sold_out": "Sold Out",
+    "description": "Description"
   }
 }

@@ -2,6 +2,8 @@
   "current": {
     "color_body_text": "#111111",
     "color_primary": "#e01f8e",
+    "color_brand_alt": "#00874f",
+    "color_brand_alt2": "#ae785f",
     "color_body_bg": "#fff",
     "color_body_bg_secondary": "#f8f8f8",
     "sale_badge_color": "#00874f",
@@ -343,6 +345,45 @@
       },
       "collection-template": {
         "type": "collection-template",
+        "blocks": {
+          "1529048660437": {
+            "type": "block_filter_size",
+            "settings": {
+              "shop_by_tags_2_title": "Size",
+              "shop_by_tags_2_list_tags": "8, 10, 12, 14, 16, 18, 20"
+            }
+          },
+          "1529224225105": {
+            "type": "block_filter_color",
+            "settings": {
+              "shop_by_tags_1_title": "Color",
+              "shop_by_color_text_1": "Beige",
+              "color-1": "",
+              "shop_by_color_text_2": "Red",
+              "color-2": "shopify:\/\/shop_images\/red.png",
+              "shop_by_color_text_3": "White",
+              "color-3": "shopify:\/\/shop_images\/white.png",
+              "shop_by_color_text_4": "Pink",
+              "color-4": "shopify:\/\/shop_images\/color-4_160x160_d5e7c676-b661-42f8-b501-3c901980376b.png",
+              "shop_by_color_text_5": "Silver",
+              "color-5": "",
+              "shop_by_color_text_6": "Blue",
+              "color-6": "shopify:\/\/shop_images\/color-6_160x160_287d6137-6ac9-46d7-a526-b70c89ec7c3e.png",
+              "shop_by_color_text_7": "Gray",
+              "color-7": "",
+              "shop_by_color_text_8": "Black",
+              "color-8": "",
+              "shop_by_color_text_9": "Green",
+              "color-9": "",
+              "shop_by_color_text_10": "",
+              "color-10": ""
+            }
+          }
+        },
+        "block_order": [
+          "1529048660437",
+          "1529224225105"
+        ],
         "settings": {
           "collection-layout": "sidebar",
           "collection-show-sort-by": true,
@@ -372,6 +413,9 @@
           "images-position": "right",
           "image-display": "full-size",
           "thumbnail_changes_variant": true,
+          "free_shipping_content": "<p>Free shipping content goes here<\/p>",
+          "returns_policy_content": "<p>Returns policy content goes here<\/p>",
+          "size_guide_content": "<p>Size guide content goes here<\/p>",
           "show_reviews": false,
           "enable_related_products": false,
           "related_products_title": "You may also like...",
@@ -381,7 +425,19 @@
           "social_sharing_title": "Share the love",
           "social_sharing_facebook": true,
           "social_sharing_twitter": true,
-          "social_sharing_pinterest": true
+          "social_sharing_pinterest": true,
+          "message__text": "We’re challanging the way clothing industry operates. The way we source. The way we sew. The way we sell. A better way to build products for the long run."
+        }
+      },
+      "list-collections-template": {
+        "type": "list-collections-template",
+        "settings": {
+          "show_options": "all",
+          "show_title": false,
+          "banner_image": "",
+          "layout": "preview",
+          "items_per_row": 4,
+          "match-height": false
         }
       }
     },

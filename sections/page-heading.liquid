@@ -1,0 +1,29 @@
+<div class="page-heading">
+    <div class="page-heading-texture texture-1"></div>
+    <div class="page-heading-texture texture-2"></div>
+    <div class="page-heading__inner">
+        <p class="page-heading-head"> {{ section.settings.text-box-section }} </p>
+        <h1> {{ section.settings.text-box-heading }} </h1>
+    </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Page Heading",
+  "settings": [
+    {
+      "id": "text-box-section",
+      "type": "text",
+      "label": "Section",
+      "default": "Section"
+    },
+    {
+      "id": "text-box-heading",
+      "type": "text",
+      "label": "Heading",
+      "default": "Main Heading"
+    }
+  ]
+}
+{% endschema %}
