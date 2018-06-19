@@ -1,0 +1,83 @@
+
+<div class="page-message">
+  {{ section.settings.brandmsg }}
+</div>
+
+<div class="page-boxes-head">
+  <h2>{{ section.settings.header }}</h2>
+  <p>{{ section.settings.intro }}</p>
+</div>
+
+{% for block in section.blocks %}
+<div class="page-boxes">
+
+  <div class="page-boxes__img">
+    <img class="page-boxes__img" src="{{ block.settings.block-img | img_url:"master" }}">
+  </div>
+  <div class="page-boxes__copy">
+    <div class="page-boxes__inner">
+        <h3>{{ block.settings.title }}</h3>
+        <p>{{ block.settings.copy }}</p>
+    </div>
+  </div>
+  
+
+</div>
+{% endfor %}
+
+
+
+{% schema %}
+{
+  "name": "About blocks",
+  "max_blocks": 5,
+  "settings": [
+    {
+      "id": "brandmsg",
+      "type": "richtext",
+      "label": "Brand message",
+      "default": "<p>We’re challanging the way clothing industry operates. The way we source. The way we sew. The way we sell. A better way to build products for the  long run.</p>"
+    },
+    {
+      "id": "header",
+      "type": "text",
+      "label": "Section header",
+      "default": "Our Values"
+    },
+    {
+      "id": "intro",
+      "type": "text",
+      "label": "Short intro",
+      "default": "This is a short introduction text"
+    }
+    ],
+    "blocks": [
+      {
+        "type": "cblock",
+        "name": "Content block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "block-img",
+            "label": "Block image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Block title"
+          },
+          {
+            "type": "richtext",
+            "id": "copy",
+            "label": "Block copy"
+          }
+        ]
+      }
+    
+  ]
+}
+{% endschema %}
+
+
+{% javascript %}
+{% endjavascript %}

@@ -439,6 +439,79 @@
           "items_per_row": 4,
           "match-height": false
         }
+      },
+      "page-heading": {
+        "type": "page-heading",
+        "settings": {
+          "text-box-section": "Faq",
+          "text-box-heading": "We have answers"
+        }
+      },
+      "page-faq": {
+        "type": "page-faq",
+        "blocks": {
+          "1529363097956": {
+            "type": "question",
+            "settings": {
+              "title": "Do you ship overseas?",
+              "answer": "<p>Integer eleifend velit ac quam hendrerit, ut sodales lorem tempor. In eleifend quam diam. Praesent nec sapien et erat euismod tristique et ut nulla. Nam ornare dolor nibh, nec iaculis nisi ultricies eu. Aliquam porttitor scelerisque quam ut scelerisque.<\/p>"
+            }
+          },
+          "1529363113143": {
+            "type": "question",
+            "settings": {
+              "title": "How long will it take to get my order?",
+              "answer": "<p>Integer eleifend velit ac quam hendrerit, ut sodales lorem tempor. In eleifend quam diam. Praesent nec sapien et erat euismod tristique et ut nulla. Nam ornare dolor nibh, nec iaculis nisi ultricies eu. Aliquam porttitor scelerisque quam ut scelerisque.<\/p>"
+            }
+          },
+          "1529363935540": {
+            "type": "question",
+            "settings": {
+              "title": "What shipping carriers do you use?",
+              "answer": "<p>Integer eleifend velit ac quam hendrerit, ut sodales lorem tempor. In eleifend quam diam. Praesent nec sapien et erat euismod tristique et ut nulla. Nam ornare dolor nibh, nec iaculis nisi ultricies eu. Aliquam porttitor scelerisque quam ut scelerisque.<\/p>"
+            }
+          },
+          "1529363943511": {
+            "type": "question",
+            "settings": {
+              "title": "Can I return my product?",
+              "answer": "<p>Integer eleifend velit ac quam hendrerit, ut sodales lorem tempor. In eleifend quam diam. Praesent nec sapien et erat euismod tristique et ut nulla. Nam ornare dolor nibh, nec iaculis nisi ultricies eu. Aliquam porttitor scelerisque quam ut scelerisque.<\/p>"
+            }
+          },
+          "1529363953982": {
+            "type": "question",
+            "settings": {
+              "title": "Can I get my product personalized?",
+              "answer": "<p>Integer eleifend velit ac quam hendrerit, ut sodales lorem tempor. In eleifend quam diam. Praesent nec sapien et erat euismod tristique et ut nulla. Nam ornare dolor nibh, nec iaculis nisi ultricies eu. Aliquam porttitor scelerisque quam ut scelerisque.<\/p>"
+            }
+          },
+          "1529363966741": {
+            "type": "question",
+            "settings": {
+              "title": "Can I sign up to your newsletter?",
+              "answer": "<p>Integer eleifend velit ac quam hendrerit, ut sodales lorem tempor. In eleifend quam diam. Praesent nec sapien et erat euismod tristique et ut nulla. Nam ornare dolor nibh, nec iaculis nisi ultricies eu. Aliquam porttitor scelerisque quam ut scelerisque.<\/p>"
+            }
+          },
+          "1529363972491": {
+            "type": "question",
+            "settings": {
+              "title": "Are these Q&As real?",
+              "answer": "<p>Absolutely.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1529363097956",
+          "1529363935540",
+          "1529363113143",
+          "1529363943511",
+          "1529363953982",
+          "1529363966741",
+          "1529363972491"
+        ],
+        "settings": {
+          "faq-questions": false
+        }
       }
     },
     "content_for_index": [

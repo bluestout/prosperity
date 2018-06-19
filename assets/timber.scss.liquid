@@ -100,6 +100,7 @@ $breakpoint-has-pull:  ('medium', 'medium-down', 'large', 'extra-large');
 $colorPrimary: {{ settings.color_primary }};
 $colorSecondary: {{ settings.color_brand_alt }};
 $colorTertiary: {{ settings.color_brand_alt2 }};
+$colorGrey: #878A8D;
 
 // Button colors
 $colorBtnPrimary: $colorPrimary;
@@ -178,7 +179,8 @@ $drawerOverlayTransition: opacity 0.4s, width 0s linear 0s;
 $drawerOverlayTransitionClosing: opacity 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
 
 // Sizing variables
-$siteWidth: 1660px;
+$siteWidth: 1356px;
+$siteInnerWidth: 860px;
 $gutter: 14px;
 $gridGutter: 14px; // can be a %, but nested grids will have smaller margins because of it
 $gridSpacing: 50px;
@@ -7799,19 +7801,66 @@ form#contact_form #newsletter-wrapper #newsletter_submit{
 }
 
 
+/*------ Page Layout ------*/
+
+.page__inner {
+  max-width: $siteInnerWidth;
+  margin: 0 auto;
+}
+
+
+/*------ Page heading ------*/
+
 .page-heading {
   text-align: center;
-
-  .page-heading__pre {
-    font-size: 12px;
-    text-transform:uppercase;
-  }
+  position: relative;
+  color: #fff;
+  margin-bottom: 50px;
 
   h1 {
-    font-size: 70px;
+    font-size: 5em;
+    line-height: 1.15em;
+    margin: 0;
+  }
+}
+.page-heading__img {
+  width: 100%;
+  height: auto;
+}
+.page-heading__pre {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform:uppercase;
+  line-height: 1.15em;
+  margin: 0;
+}
+.page-heading__inner {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+
+/*------ FAQs ------*/
+
+.page--faqs {
+
+  .page-heading__inner {
+    color: #000;
+    top: 23%;
   }
 }
 
+.faqs {
+  background-color: #fff;
+  padding: 35px;
+  position: relative;
+  top: -200px;
+}
 .list-faqs {
   margin: 0;
   
@@ -7821,22 +7870,31 @@ form#contact_form #newsletter-wrapper #newsletter_submit{
 
   dt {
     border-top: 1px solid rgba(0,0,0,.1);
-    padding: 35px 25px;
+    padding: 42px 25px;
     padding-right: 80px;
     font-weight: 700;
-    font-size: 1.05em;
+    font-size: 1.15em;
     position: relative;
     transition: .2s all;
 
+    &::before,
     &::after {
-      content: "+";
+      content: "";
       position: absolute;
+      display: inline-block;
+      width: 23px;
+      height: 1px;
       right: 15px;
-      top: 30px;
-      color: $colorTertiary;
-      font-weight: 100;
-      font-size: 1.7em;
-      line-height: 1em;
+      top: 52px;
+      background-color: $colorTertiary;
+    }
+
+    &::after {
+      height: 23px;
+      width: 1px;
+      top: 41px;
+      right: 26px;
+      transition: all 400ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
     }
 
     &:hover {
@@ -7845,9 +7903,10 @@ form#contact_form #newsletter-wrapper #newsletter_submit{
     }
 
     &.active {
+      color: $colorTertiary;      
 
       &::after {
-        content: "-";
+        transform: scaleY(0);
       }
     }
   }
@@ -7856,4 +7915,96 @@ form#contact_form #newsletter-wrapper #newsletter_submit{
     padding: 0 25px 35px 50px;
     display: none;
   }
+}
+
+
+/*------ About blocks ------*/
+.page-boxes-head {
+  max-width: 860px;
+  margin: 80px auto;
+
+  h2 {
+    color: rgba($colorGrey, .25);
+    font-size: 8.5em;
+    line-height: 1.1em;
+    margin: 0;
+  }
+
+  p {
+    position: relative;
+    padding-left: 20%;
+    margin-top: -30px;
+    z-index: 1;
+  }
+}
+
+.page-boxes {
+  display: flex;
+}
+.page-boxes__img {
+  flex: 1;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+  }
+}
+.page-boxes__copy {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 25px;
+
+  h3 {
+    font-size: 1.6em;
+    line-height: 1.15em;
+    margin-bottom: 45px;
+  }
+}
+.page-boxes__inner {
+  max-width: 320px;
+}
+
+.page-message {
+  max-width: 720px;
+  margin: 130px auto;
+  text-align: center;
+
+  p {
+    font-size: 25px;
+    font-family: $headerFontStack;
+  }
+}
+
+
+@media only screen and (min-width: 1200px) {
+  .page-heading {
+
+    h1 {
+      font-size: 11em;
+    }
+  }
+
+  .faqs {
+    top: -300px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+
+  .page-boxes {
+    
+    &:nth-child(even) {
+
+      .page-boxes__img {
+        order: 2;
+      }
+      .page-boxes__copy {
+        order: 1;
+      }
+    }
+  }
+
 }

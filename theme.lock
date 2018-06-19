@@ -61,6 +61,8 @@ assets/hero-collection-1.jpg:
   development: 2018-06-07T16:04:09-04:00   93ceef08b77d9dbcae760a7983b65b15
 assets/hero-collection-2.jpg:
   development: 2018-06-07T16:05:40-04:00   fb6fea64d2eb0da40eea3d4d612649b6
+assets/hero-faq.jpg:
+  development: 2018-06-19T16:24:12-04:00   71f3043223e7b749c793dac2c21ba046
 assets/hero-promo-1.jpg:
   development: 2018-06-07T16:07:55-04:00   06cbb9fea5fbad7ec79abcf52da1b115
 assets/ico-select.svg.liquid:
@@ -146,11 +148,11 @@ assets/texture-leafs.png:
 assets/timber.js.liquid:
   development: 2018-06-17T04:50:37-04:00   32679d49bd2792226c8537b66e734295
 assets/timber.scss.liquid:
-  development: 2018-06-18T19:21:47-04:00   458f62d03f8ceaf6070188accea7fa8e
+  development: 2018-06-19T17:50:20-04:00   6edc8074423eacf17e4e2a51967b69a1
 assets/web-bai-mobile2.jpg:
   development: 2018-06-09T07:57:47-04:00   8247bb8902197daaed0b327aa05d6b48
 config/settings_data.json:
-  development: 2018-06-17T04:39:07-04:00   1fee9159bc604c3cd7ee00289ddc8b84
+  development: 2018-06-18T19:25:50-04:00   95bf0305df8d07cd694ceb306c8fba34
 config/settings_schema.json:
   development: 2018-06-10T08:32:02-04:00   579346f8a96fe832af7b29953b8e941d
 layout/password.liquid:
@@ -207,10 +209,12 @@ sections/map.liquid:
   development: 2018-06-09T07:57:53-04:00   6f935fbb3af18ae15ce25eec92b88959
 sections/newsletter.liquid:
   development: 2018-06-09T12:56:45-04:00   5b0c90866b86bbe3a86cc6c22af020b9
+sections/page-blocks.liquid:
+  development: 2018-06-19T18:02:25-04:00   a1b3c1835c6d15656e04377fdd21b714
 sections/page-faq.liquid:
   development: 2018-06-18T19:24:49-04:00   1719bc67a8bba51ecedd85493bad531e
 sections/page-heading.liquid:
-  development: 2018-06-18T16:27:37-04:00   3fc3a1e5e11c332322db8bfe89e6ab4c
+  development: 2018-06-19T17:39:53-04:00   16302433ed05104c7b4090166adf8542
 sections/password-template.liquid:
   development: 2018-06-06T12:48:26-04:00   39eda08bce70a7ea65e67ffce8c8d32d
 sections/product-template.liquid:
@@ -352,11 +356,11 @@ templates/index.ssw-async.liquid:
 templates/list-collections.liquid:
   development: 2018-06-06T12:48:34-04:00   1bc1e3a829c34998212d678d09b0e9be
 templates/page.about.liquid:
-  development: 2018-06-18T18:40:12-04:00   05ff306302a118cd0fedc50773125864
+  development: 2018-06-19T17:30:35-04:00   2e145f96e1f8099634130c4f0ac725f0
 templates/page.contact.liquid:
   development: 2018-06-06T12:48:34-04:00   7db675fc5954a47124d79bcb7b321d92
 templates/page.faqs.liquid:
-  development: 2018-06-18T18:47:51-04:00   74809ec20e7bd196355e5985297b4706
+  development: 2018-06-19T17:00:58-04:00   6f612fb755083a0f63aa31d30f4d503f
 templates/page.liquid:
   development: 2018-06-18T17:28:25-04:00   f1e881616edfa6d114733eb30b48d324
 templates/page.socialshopwave.liquid:
