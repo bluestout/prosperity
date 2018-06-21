@@ -1,0 +1,21 @@
+<div class="page__message">
+
+    {{ section.settings.text-box-intro }}
+
+</div>
+
+
+
+{% schema %}
+{
+  "name": "Inline Message Site",
+  "settings": [
+    {
+      "id": "text-box-intro",
+      "type": "richtext",
+      "label": "Intro copy",
+      "default": "<p>We’re challanging the way clothing industry operates. The way we source. The way we sew. The way we sell. A better way to build products for the long run.</p>"
+    }
+  ]
+}
+{% endschema %}

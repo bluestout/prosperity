@@ -1,0 +1,42 @@
+<div class="contacts-side">
+
+    <h4>{{ section.settings.text-box-intro }}</h4>
+
+    <div class="contacts-side__box">
+      <i class="pdicon-location contacts-side__picto"></i>
+      {{ section.settings.text-box-address }}
+    </div>
+
+    <div class="contacts-side__box">
+      <i class="pdicon-phone contacts-side__picto"></i>
+      <a class="btn-phone" href="tel:{{ section.settings.text-box-phone }}">{{ section.settings.text-box-phone }}</a>
+    </div>
+
+</div>
+
+
+{% schema %}
+{
+  "name": "Side Contacts",
+  "settings": [
+    {
+      "id": "text-box-intro",
+      "type": "text",
+      "label": "Contacts intro text",
+      "default": "Prefer to make a call or visit?"
+    },
+    {
+      "id": "text-box-address",
+      "type": "richtext",
+      "label": "Address",
+      "default": "<p><strong>Prosperity Denim</strong></p><p>228 Park Ave S, <br/>New York<br/>United States of America</p>"
+    },
+     {
+      "id": "text-box-phone",
+      "type": "text",
+      "label": "Phone number",
+      "default": "(012) 345 6789"
+    }
+  ]
+}
+{% endschema %}

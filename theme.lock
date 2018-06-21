@@ -61,6 +61,8 @@ assets/hero-collection-1.jpg:
   development: 2018-06-07T16:04:09-04:00   93ceef08b77d9dbcae760a7983b65b15
 assets/hero-collection-2.jpg:
   development: 2018-06-07T16:05:40-04:00   fb6fea64d2eb0da40eea3d4d612649b6
+assets/hero-contact-1.jpg:
+  development: 2018-06-21T16:41:16-04:00   5fe7890d484fae832e75fb1d73821137
 assets/hero-faq.jpg:
   development: 2018-06-19T16:24:12-04:00   71f3043223e7b749c793dac2c21ba046
 assets/hero-promo-1.jpg:
@@ -92,11 +94,11 @@ assets/password-backup.scss:
 assets/password.scss.liquid:
   development: 2018-06-06T12:48:30-04:00   dfaee17b0b51479960db2158da5799c9
 assets/pdicon.svg:
-  development: 2018-06-09T11:35:49-04:00   e23c15eb2e2d0dfde8901a93ddde89c9
+  development: 2018-06-21T17:54:41-04:00   3279a7eb3f536b4967603c3bb5b0f536
 assets/pdicon.ttf:
-  development: 2018-06-09T11:35:48-04:00   f54bc0aef5c16a5da48bdff61c46202b
+  development: 2018-06-21T17:54:40-04:00   12385f56eb5801301c898db9338b55fb
 assets/pdicon.woff:
-  development: 2018-06-09T11:35:48-04:00   5490b0e11cd3fdb5c5548a233cd461b7
+  development: 2018-06-21T17:54:41-04:00   b3bba6b686b9a794d83765316cdd375c
 assets/plugins.css.liquid:
   development: 2018-06-06T12:48:30-04:00   04a296f3a90cc95669eb0283a8d401c4
 assets/plugins.js:
@@ -148,7 +150,7 @@ assets/texture-leafs.png:
 assets/timber.js.liquid:
   development: 2018-06-17T04:50:37-04:00   32679d49bd2792226c8537b66e734295
 assets/timber.scss.liquid:
-  development: 2018-06-19T17:50:20-04:00   6edc8074423eacf17e4e2a51967b69a1
+  development: 2018-06-21T17:56:52-04:00   7fa07a0849ec541f66b367eacc0de452
 assets/web-bai-mobile2.jpg:
   development: 2018-06-09T07:57:47-04:00   8247bb8902197daaed0b327aa05d6b48
 config/settings_data.json:
@@ -192,7 +194,7 @@ sections/featured-products.liquid:
 sections/footer.liquid:
   development: 2018-06-09T11:57:25-04:00   80bf1422b8266b61fee0a4aa8552a3e8
 sections/header.liquid:
-  development: 2018-06-09T11:45:13-04:00   98481be11a163909cc97f6edb6820b76
+  development: 2018-06-21T17:38:17-04:00   293fc8de4acc870cf86643e60ed0840f
 sections/home-hero.liquid:
   development: 2018-06-07T17:03:52-04:00   c54b2c77c207acf02b546a49c89c5dbe
 sections/image-bar.liquid:
@@ -201,6 +203,10 @@ sections/image-with-text-overlay.liquid:
   development: 2018-06-07T17:05:31-04:00   68c7da310b05d55d84f9dbdbae6e1058
 sections/indiv-product.liquid:
   development: 2018-06-06T12:48:25-04:00   272fb355706b7534a599ee4f7949add8
+sections/inline-message-contact.liquid:
+  development: 2018-06-21T17:18:13-04:00   8d68a4674f91793724ae80776dd30966
+sections/inline-message-sitewide.liquid:
+  development: 2018-06-21T17:50:15-04:00   cdc36f9e7ce79881215fa9c219d86086
 sections/instagram.liquid:
   development: 2018-06-06T12:48:25-04:00   b5715b0a66013dc6f12c956e8343da5e
 sections/list-collections-template.liquid:
@@ -213,6 +219,10 @@ sections/page-blocks.liquid:
   development: 2018-06-19T18:02:25-04:00   a1b3c1835c6d15656e04377fdd21b714
 sections/page-faq.liquid:
   development: 2018-06-18T19:24:49-04:00   1719bc67a8bba51ecedd85493bad531e
+sections/page-heading-contact.liquid:
+  development: 2018-06-21T16:40:18-04:00   5e3f7b894f0d78736d57b798dbd4d91d
+sections/page-heading-faq.liquid:
+  development: 2018-06-21T16:51:26-04:00   9fef8cf19218735f40de90839a235591
 sections/page-heading.liquid:
   development: 2018-06-19T17:39:53-04:00   16302433ed05104c7b4090166adf8542
 sections/password-template.liquid:
@@ -223,6 +233,8 @@ sections/products-block.liquid:
   development: 2018-06-10T04:28:49-04:00   adc9a6a15fa988e5d72e6ab84079b948
 sections/rich-text.liquid:
   development: 2018-06-07T16:36:08-04:00   8029d26a5b598d704c070c78396b05b9
+sections/side-contacts.liquid:
+  development: 2018-06-21T17:11:54-04:00   4e61a58c3b5296ecb35fb299d146379e
 sections/slideshow.liquid:
   development: 2018-06-06T12:48:26-04:00   413751f875924d2c0027a87f4279df08
 sections/text-adverts.liquid:
@@ -358,13 +370,15 @@ templates/list-collections.liquid:
 templates/page.about.liquid:
   development: 2018-06-19T17:30:35-04:00   2e145f96e1f8099634130c4f0ac725f0
 templates/page.contact.liquid:
-  development: 2018-06-06T12:48:34-04:00   7db675fc5954a47124d79bcb7b321d92
+  development: 2018-06-21T17:14:41-04:00   b1878b4000cfbbae8f26a98fcd5ee94c
 templates/page.faqs.liquid:
-  development: 2018-06-19T17:00:58-04:00   6f612fb755083a0f63aa31d30f4d503f
+  development: 2018-06-21T16:51:41-04:00   2cf917f9306ec124405e81a1cef0ec16
 templates/page.liquid:
-  development: 2018-06-18T17:28:25-04:00   f1e881616edfa6d114733eb30b48d324
+  development: 2018-06-21T17:43:08-04:00   ffd08b83d64192f048b0743dee426b3f
 templates/page.socialshopwave.liquid:
   development: 2018-06-13T02:22:55-04:00   9a1550eba62f11ea369fb79b51a28f83
+templates/page.static.liquid:
+  development: 2018-06-21T17:57:08-04:00   ff7185b3379efd8c633b59aab31e7733
 templates/password.liquid:
   development: 2018-06-06T12:48:34-04:00   a8ceb6357f9e916a9de46dc87c02ab22
 templates/product.liquid:

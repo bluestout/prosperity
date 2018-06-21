@@ -1,0 +1,39 @@
+<div class="page-heading">
+    {% comment %}
+    <div class="page-heading-texture texture-1"></div>
+    <div class="page-heading-texture texture-2"></div>
+    {% endcomment %}
+
+    <img class="page-heading__img" src="{{ section.settings.text-box-image | img_url: "master" }} ">
+    
+    <div class="page-heading__inner">
+        <p class="page-heading__pre"> {{ section.settings.text-box-section }} </p>
+        <h1> {{ section.settings.text-box-heading }} </h1>
+    </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Page Heading FAQ",
+  "settings": [
+    {
+      "id": "text-box-image",
+      "type": "image_picker",
+      "label": "Heading image"
+    },
+    {
+      "id": "text-box-section",
+      "type": "text",
+      "label": "Section",
+      "default": "Section"
+    },
+    {
+      "id": "text-box-heading",
+      "type": "text",
+      "label": "Heading",
+      "default": "Main Heading"
+    }
+  ]
+}
+{% endschema %}

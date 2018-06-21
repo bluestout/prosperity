@@ -1,0 +1,21 @@
+<div class="page__message">
+
+    {{ section.settings.text-box-intro }}
+
+</div>
+
+
+
+{% schema %}
+{
+  "name": "Inline Message Contact",
+  "settings": [
+    {
+      "id": "text-box-intro",
+      "type": "richtext",
+      "label": "Intro copy",
+      "default": "<p>Nice to meet you! Have a question, a suggestion, an idea..? Get in touch. We’d like to hear from you.</p>"
+    }
+  ]
+}
+{% endschema %}
