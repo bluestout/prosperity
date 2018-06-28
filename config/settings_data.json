@@ -43,9 +43,9 @@
     "ajax_cart_method": "drawer",
     "cart_vendor_enable": false,
     "cart_notes_enable": false,
-    "sm_facebook_link": "",
+    "sm_facebook_link": "a",
     "sm_twitter_link": "",
-    "sm_instagram_link": "",
+    "sm_instagram_link": "a",
     "sm_tumblr_link": "",
     "sm_pinterest_link": "",
     "sm_youtube_link": "",
@@ -285,8 +285,15 @@
           "footer-1": {
             "type": "menu",
             "settings": {
-              "menu_title": "Links",
-              "footer_linklist": "footer"
+              "menu_title": "Customer Care",
+              "footer_linklist": "customer-care"
+            }
+          },
+          "1530093572733": {
+            "type": "menu",
+            "settings": {
+              "menu_title": "About Us",
+              "footer_linklist": "about"
             }
           },
           "1528544328990": {
@@ -301,6 +308,7 @@
         "block_order": [
           "1528559896485",
           "footer-1",
+          "1530093572733",
           "1528544328990"
         ],
         "settings": {
@@ -431,20 +439,39 @@
       },
       "list-collections-template": {
         "type": "list-collections-template",
+        "blocks": {
+          "1530107545272": {
+            "type": "collection",
+            "settings": {
+              "collection": "shirts"
+            }
+          },
+          "1530107553115": {
+            "type": "collection",
+            "settings": {
+              "collection": "trousers"
+            }
+          }
+        },
+        "block_order": [
+          "1530107545272",
+          "1530107553115"
+        ],
         "settings": {
-          "show_options": "all",
+          "show_options": "selected",
           "show_title": false,
           "banner_image": "",
-          "layout": "preview",
-          "items_per_row": 4,
+          "layout": "grid",
+          "items_per_row": 2,
           "match-height": false
         }
       },
       "page-heading": {
         "type": "page-heading",
         "settings": {
-          "text-box-section": "Faq",
-          "text-box-heading": "We have answers"
+          "text-box-image": "shopify:\/\/shop_images\/hero-about.jpg",
+          "text-box-section": "About",
+          "text-box-heading": "Be unique."
         }
       },
       "page-faq": {
@@ -457,17 +484,17 @@
               "answer": "<p>Integer eleifend velit ac quam hendrerit, ut sodales lorem tempor. In eleifend quam diam. Praesent nec sapien et erat euismod tristique et ut nulla. Nam ornare dolor nibh, nec iaculis nisi ultricies eu. Aliquam porttitor scelerisque quam ut scelerisque.<\/p>"
             }
           },
-          "1529363113143": {
-            "type": "question",
-            "settings": {
-              "title": "How long will it take to get my order?",
-              "answer": "<p>Integer eleifend velit ac quam hendrerit, ut sodales lorem tempor. In eleifend quam diam. Praesent nec sapien et erat euismod tristique et ut nulla. Nam ornare dolor nibh, nec iaculis nisi ultricies eu. Aliquam porttitor scelerisque quam ut scelerisque.<\/p>"
-            }
-          },
           "1529363935540": {
             "type": "question",
             "settings": {
               "title": "What shipping carriers do you use?",
+              "answer": "<p>Integer eleifend velit ac quam hendrerit, ut sodales lorem tempor. In eleifend quam diam. Praesent nec sapien et erat euismod tristique et ut nulla. Nam ornare dolor nibh, nec iaculis nisi ultricies eu. Aliquam porttitor scelerisque quam ut scelerisque.<\/p>"
+            }
+          },
+          "1529363113143": {
+            "type": "question",
+            "settings": {
+              "title": "How long will it take to get my order?",
               "answer": "<p>Integer eleifend velit ac quam hendrerit, ut sodales lorem tempor. In eleifend quam diam. Praesent nec sapien et erat euismod tristique et ut nulla. Nam ornare dolor nibh, nec iaculis nisi ultricies eu. Aliquam porttitor scelerisque quam ut scelerisque.<\/p>"
             }
           },
@@ -511,6 +538,61 @@
         ],
         "settings": {
           "faq-questions": false
+        }
+      },
+      "page-blocks": {
+        "type": "page-blocks",
+        "blocks": {
+          "1529442839068": {
+            "type": "cblock",
+            "settings": {
+              "block-img": "shopify:\/\/shop_images\/about-1_49f7621e-f9ee-4873-9989-6dfacb84e78e.jpg",
+              "title": "Do not follow.",
+              "copy": "<p>Integer eleifend velit ac quam hendrerit, ut sodales lorem tempor. In eleifend quam diam. Praesent nec sapien et erat euismod tristique et ut nulla. Nam ornare dolor nibh, nec iaculis nisi ultricies eu. Aliquam porttitor scelerisque quam ut scelerisque.<\/p>"
+            }
+          },
+          "1529442865609": {
+            "type": "cblock",
+            "settings": {
+              "block-img": "shopify:\/\/shop_images\/about-2_de234827-42d0-4c94-91d1-2e9e094f2252.jpg",
+              "title": "Be brave. Lead.",
+              "copy": "<p>Integer eleifend velit ac quam hendrerit, ut sodales lorem tempor. In eleifend quam diam. Praesent nec sapien et erat euismod tristique et ut nulla. Nam ornare dolor nibh, nec iaculis nisi ultricies eu. Aliquam porttitor scelerisque quam ut scelerisque.<\/p>"
+            }
+          },
+          "1529442884499": {
+            "type": "cblock",
+            "settings": {
+              "block-img": "shopify:\/\/shop_images\/about-3_31b2c2ac-70cd-4d76-b785-b7d0a692f977.jpg",
+              "title": "Be who you are.",
+              "copy": "<p>Integer eleifend velit ac quam hendrerit, ut sodales lorem tempor. In eleifend quam diam. Praesent nec sapien et erat euismod tristique et ut nulla. Nam ornare dolor nibh, nec iaculis nisi ultricies eu. Aliquam porttitor scelerisque quam ut scelerisque.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1529442839068",
+          "1529442865609",
+          "1529442884499"
+        ],
+        "settings": {
+          "brandmsg": "<p>We’re challanging the way clothing industry operates. The way we source. The way we sew. The way we sell. A better way to build products for the  long run.<\/p>",
+          "header": "Our Values",
+          "intro": "Integer eleifend velit ac quam hendrerit, ut sodales lorem tempor. In eleifend quam diam. Praesent nec sapien et erat euismod tristique et ut nulla. Nam ornare dolor nibh, nec iaculis nisi ultricies eu. Aliquam porttitor scelerisque quam ut scelerisque."
+        }
+      },
+      "page-heading-contact": {
+        "type": "page-heading-contact",
+        "settings": {
+          "text-box-image": "shopify:\/\/shop_images\/hero-contact-1.jpg",
+          "text-box-section": "Contact us",
+          "text-box-heading": "Hello!"
+        }
+      },
+      "page-heading-faq": {
+        "type": "page-heading-faq",
+        "settings": {
+          "text-box-image": "shopify:\/\/shop_images\/hero-faq.jpg",
+          "text-box-section": "FAQ",
+          "text-box-heading": "We have answers"
         }
       }
     },

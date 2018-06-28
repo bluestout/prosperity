@@ -1,8 +1,8 @@
 <!-- /templates/customers/login.liquid -->
 
-<div class="grid page-main--wrapper">
+<div class="grid page-main--wrapper page--account">
 
-  <div class="grid__item large--one-third push--large--one-third text-center">
+  <div class="grid__item large--one-half push--large--one-half text-center">
 
     {% comment %}
       If a user has successfully requested a new password, the form.posted_successfully? variable
@@ -13,7 +13,7 @@
       {{ 'customer.recover_password.success' | t }}
     </div>
 
-    <div id="CustomerLoginForm" class="form-vertical">
+    <div id="CustomerLoginForm" class="form-vertical form-contact form--account">
       {% form 'customer_login' %}
 
         <div class="sitewide--title-wrapper">
@@ -31,7 +31,7 @@
         {% endif %}
 
         <p>
-          <input type="submit" class="btn btn--full account-section--btn" value="{{ 'customer.login.sign_in' | t }}">
+          <input type="submit" class="btn btn--full account-section--btn btn--secondary" value="{{ 'customer.login.sign_in' | t }}">
         </p>
         <p><a href="/" class="login-form-cancel">{{ 'customer.login.cancel' | t }}</a></p>
         <p>{{ 'layout.customer.create_account' | t | customer_register_link }}</p>
@@ -45,7 +45,7 @@
     {% comment %}
       JS shows/hides this form in timber.loginForms()
     {% endcomment %}
-    <div id="RecoverPasswordForm" style="display: none;">
+    <div id="RecoverPasswordForm" style="display: none;" class="form-contact form--account">
 
       <div class="sitewide--title-wrapper">
         <h2 class="page--title">{{ 'customer.recover_password.title' | t }}</h2>
@@ -68,7 +68,7 @@
           <input type="email" value="" name="email" id="RecoverEmail" class="input-full" placeholder="{{ 'customer.recover_password.email' | t }}" autocorrect="off" autocapitalize="off">
 
           <p>
-            <input type="submit" class="btn btn--full account-section--btn" value="{{ 'customer.recover_password.submit' | t }}">
+            <input type="submit" class="btn btn--full account-section--btn btn--secondary" value="{{ 'customer.recover_password.submit' | t }}">
           </p>
           <button type="button" id="HideRecoverPasswordLink" class="text-link">{{ 'customer.recover_password.cancel' | t }}</button>
         {% endform %}
@@ -86,10 +86,14 @@
       <h2>{{ 'customer.login.guest_title' | t }}</h2>
 
       {% form 'guest_login' %}
-        <input type="submit" class="btn" value="{{ 'customer.login.guest_continue' | t }}">
+        <input type="submit" class="btn btn--secondary" value="{{ 'customer.login.guest_continue' | t }}">
       {% endform %}
     {% endif %}
 
+  </div>
+
+  <div class="grid__item large--one-half pull--large--one-half">
+    <img src="{{ 'login.jpg' | asset_url }}" alt="Prosperity Denim Fashion">
   </div>
 
 </div>

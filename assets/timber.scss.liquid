@@ -2640,6 +2640,10 @@ header{
     background-color: darken($colorDrawers, 5%);
   }
 }
+.mobile-nav__toggle button {
+  font-size: 11px;
+  opacity: .5;
+}
 
 .mobile-nav .search-bar {
     padding: 30px 15px 0;
@@ -2647,11 +2651,11 @@ header{
 }
 
 .mobile-nav__has-sublist {
-  display: table;
+  display: block;
   width: 100%;
+  position: relative;
 
   .mobile-nav__link {
-    display: table-cell;
     vertical-align: middle;
     width: 100%;
   }
@@ -2660,7 +2664,11 @@ header{
 .mobile-nav__toggle {
   display: table-cell;
   vertical-align: middle;
-  width: 1%;
+  width: 50px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .mobile-nav__toggle-open {
@@ -2718,7 +2726,11 @@ header{
   }
 
   .mobile-nav__item {
-    padding-left: 2em;
+    padding-left: 0;
+
+    a {
+      font-weight: 400 !important;
+    }
   }
 
   .mobile-nav__item:after {
@@ -2869,7 +2881,8 @@ header{
 
   input,
   textarea {
-    border-color: $colorDrawerBorder;
+    border: none;
+    border-bottom: 1px solid $colorDrawerBorder;
   }
 
   & > * {
@@ -3464,7 +3477,7 @@ header{
 .errors {
   color: $errorRed;
   background-color: $errorRedBg;
-  border-color: $errorRed;
+  border: none;
 
   a {
     color: $errorRed;
@@ -8304,8 +8317,8 @@ form#contact_form #newsletter-wrapper #newsletter_submit{
     background-color: transparent;
     color: rgba(0,0,0,.4);
     font-size: 1.2em;
-    border: 1px solid #e6e6e6;
-    border-left: none;
+    border: none;
+    border-bottom: 1px solid #e6e6e6;
     padding: 13px 12px;
     display: block;
     flex: 0 0 auto;
@@ -8446,6 +8459,99 @@ form#contact_form #newsletter-wrapper #newsletter_submit{
 }
 
 
+/*------ Create Account ------*/
+.form--account {
+  max-width: 250px;
+  margin: 0 auto;
+
+  .btn--secondary {
+    background-color: $colorPrimary;
+
+    &:hover {
+      background-color: lighten($colorPrimary, 5%);
+    }
+  }
+}
+
+
+/*------ Blog ------*/
+.blog-articles {
+  max-width: 900px;
+  margin: 0 auto;
+
+  h2 {
+    margin-top: 14px;
+    margin-bottom: 18px;
+    font-size: 1.7em;
+    line-height: 1.1em;
+
+    a {
+      color: #000;
+    }
+  }
+
+  .article--indiv {
+    margin-left: 0;
+
+    > .grid__item {
+      padding-left: 0;
+    }
+
+    .rte {
+      padding-left: 50px;
+    }
+
+    &:first-child {
+      width: 100%;
+
+      h2 {
+        font-size: 2.3em;
+        margin-top: 20px;
+        margin-bottom: 26px;
+      }
+    }
+  }
+}
+
+.blog-foot {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 25px;
+
+  > * {
+    flex: 1;
+  }
+}
+.blog-foot__more {
+  text-align: right;
+
+  p {
+    line-height: 1.1em;
+  }
+
+  a {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    line-height: 1.1em;
+
+    &:hover {
+      color: #000;
+    }
+  }
+}
+.blog-foot__author {
+  font-size: 13px;
+  opacity: .5;
+  line-height: 1.1em;
+
+  .indiv-post-time {
+    opacity: 1;
+    line-height: 1.1em;
+  }
+}
 
 
 @media only screen and (min-width: 1200px) {
@@ -8461,6 +8567,18 @@ form#contact_form #newsletter-wrapper #newsletter_submit{
   }
 }
 
+@media only screen and (min-width: 769px) {
+  .pull--large--one-half {
+    right: 50%;
+    position: relative;
+  }
+
+  .page--account {
+    display: flex;
+    align-items: center;
+  }
+}
+
 @media only screen and (min-width: 768px) {
 
   .page-boxes {
@@ -8472,6 +8590,24 @@ form#contact_form #newsletter-wrapper #newsletter_submit{
       }
       .page-boxes__copy {
         order: 1;
+      }
+    }
+  }
+
+  .blog-articles {
+    display: flex;
+    flex-wrap: wrap;
+
+    .article--indiv {
+      width: 50%;
+      float: none;
+      padding: 8px;
+
+      &:first-child {
+
+        .rte {
+          padding-left: 150px;
+        }
       }
     }
   }
@@ -8731,6 +8867,17 @@ form#contact_form #newsletter-wrapper #newsletter_submit{
     }
   }
 
+  .article--indiv {
+
+    > .grid__item {
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+  .site-footer {
+    padding-top: 60px;
+  }
 
 }
 

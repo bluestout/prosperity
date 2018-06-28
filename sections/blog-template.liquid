@@ -22,7 +22,7 @@
   {% endif %}
 </div>
 
-  <div class="grid__item large--three-quarters blog-template--main">
+  <div class="grid__item large--one-whole blog-template--main">
 
     {% comment %}
       Loop through each article in your blog. This is limited to what you set for pagination above.
@@ -31,10 +31,14 @@
         - http://docs.shopify.com/themes/liquid-variables/article
     {% endcomment %}
 
+    <div class="blog-articles">
+
     {% for article in blog.articles %}
 
+    
       <div class="article--indiv grid">
 
+        {% comment %}
       	<div class="grid__item large--one-quarter blog-template--individual">
           <div>
           {% if section.settings.show_author_name %}
@@ -51,20 +55,21 @@
 			</li>
 			{% endif %}
 
-{% if article.tags.size > 0 %}
-  <li>
-    <span>{{ 'blogs.article.tags' | t }}:</span>
-    {% for tag in article.tags %}
-      <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
-    {% endfor %}
-  </li>
-{% endif %}
+      {% if article.tags.size > 0 %}
+        <li>
+          <span>{{ 'blogs.article.tags' | t }}:</span>
+          {% for tag in article.tags %}
+            <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+          {% endfor %}
+        </li>
+      {% endif %}
 
 			</ul>
 
 		</div>
+    {% endcomment %}
 
-      	<div class="grid__item large--three-quarters">
+      	<div class="grid__item large--one-whole">
 
 	        {% if article.image %}
 	          <a class="article__featured-image" href="{{ article.url }}">
@@ -72,7 +77,7 @@
 	          </a>
 	        {% endif %}
 
-   	        <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+   	      <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
 
 	        {% comment %}
 	          Add a surrounding div with class 'rte' to anything that will come from the rich text editor.
@@ -80,17 +85,38 @@
 	        {% endcomment %}
 	        <div class="rte">
 	            {{ article.excerpt_or_content  | strip_html | truncatewords: 100 }}
+
+              <div class="blog-foot">
+                <div class="blog-foot__author">
+
+                  
+                  <time class="indiv-post-time" datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>
+                  {% if section.settings.show_author_name %}
+                    by {{ article.author }}
+                  {% endif %}
+
+                </div>
+                <div class="blog-foot__more">
+
+                  <p><a href="{{ article.url }}">{{ 'blogs.article.read_more' | t }}</a></p>
+
+                </div>
+              </div>
+
 	        </div>
 
-	        <p><a href="{{ article.url }}">{{ 'blogs.article.read_more' | t }} &rarr;</a></p>
-
-		</div>
-
+          
+		    </div>
       </div>
 
+
+      {% comment %}
       {% unless forloop.last %}<hr>{% endunless %}
+      {% endcomment %}
 
     {% endfor %}
+
+    </div>
 
   </div>
 
@@ -141,7 +167,7 @@
 
   <div class="grid__item large--one-whole">
 	    {% if paginate.pages > 1 %}
-<div class="pagination">
+  <div class="pagination">
 
   <ul>
     {% if paginate.previous %}

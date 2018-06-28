@@ -8,7 +8,7 @@ assets/about-2.jpg:
 assets/about-3.jpg:
   development: 2018-06-28T08:29:25-04:00   3d6e485410e807688b16db1dd7f95029
 assets/ajax-cart.js.liquid:
-  development: 2018-06-06T12:48:27-04:00   004c73323bfa1870e3ba30056a8b6d59
+  development: 2018-06-28T03:53:42-04:00   c14409a1249e3c22666651f4ced6d4e4
 assets/blog-1.jpg:
   development: 2018-06-07T17:11:40-04:00   38803cf2fcb2826f4cf9f186cc7c25bd
 assets/blog-2.jpg:
@@ -27,6 +27,8 @@ assets/checked12.png:
   development: 2018-06-15T04:26:01-04:00   32f0b3e7dcf11c4e17d958969613ce3b
 assets/close.png:
   development: 2018-06-06T12:48:27-04:00   acc83f311f9a17c603201bcef861a43d
+assets/create-account.jpg:
+  development: 2018-06-28T13:03:15-04:00   8d94d684eb704da5c8db5627aab6b5a8
 assets/custom.js.liquid:
   development: 2018-06-17T04:51:17-04:00   6dc69741153021bca3be203895320ea6
 assets/fancybox_loading.gif:
@@ -81,6 +83,8 @@ assets/icons.woff:
   development: 2018-06-06T12:48:30-04:00   54166dff04d4c26c2bf81d987f3e9c21
 assets/jquery.currencies.min.js:
   development: 2018-06-09T07:57:37-04:00   fbda3f892f5bfe99013e90c545ecef31
+assets/login.jpg:
+  development: 2018-06-28T13:27:33-04:00   f785386727df00db21293f6741c5b61a
 assets/logo-prosperitydenim-full.png:
   development: 2018-06-09T07:40:57-04:00   bdc161bea4babb342b4f76e83ffdf5cb
 assets/logo-prosperitydenim.png:
@@ -150,9 +154,11 @@ assets/texture-leafs.png:
 assets/timber.js.liquid:
   development: 2018-06-17T04:50:37-04:00   32679d49bd2792226c8537b66e734295
 assets/timber.scss.liquid:
-  development: 2018-06-28T09:08:40-04:00   1bc7ac85d95e7128fa00fa48559bd459
+  development: 2018-06-28T14:51:29-04:00   9809c9ca9e99e8d38f20d1e07feb4f6c
+assets/web-bai-mobile2.jpg:
+  development: 2018-06-09T07:57:47-04:00   8247bb8902197daaed0b327aa05d6b48
 config/settings_data.json:
-  development: 2018-06-18T19:25:50-04:00   95bf0305df8d07cd694ceb306c8fba34
+  development: 2018-06-28T08:32:48-04:00   883e9676ab08276379aab7bbc1da3b11
 config/settings_schema.json:
   development: 2018-06-10T08:32:02-04:00   579346f8a96fe832af7b29953b8e941d
 layout/password.liquid:
@@ -174,7 +180,7 @@ sections/announcement-bar.liquid:
 sections/article-template.liquid:
   development: 2018-06-06T12:48:24-04:00   52ca5b718b0db16abb51e6139c6164d9
 sections/blog-template.liquid:
-  development: 2018-06-06T12:48:24-04:00   f317782d6397bbc0ee8f12ae7ef28a5e
+  development: 2018-06-28T14:38:49-04:00   ee3e1fefcbb4fcd089e22e90779612e2
 sections/cart-template.liquid:
   development: 2018-06-06T12:48:25-04:00   65949fd8abbeb745941f020f4e93f3aa
 sections/collection-list.liquid:
@@ -188,11 +194,11 @@ sections/feature-row.liquid:
 sections/featured-blog.liquid:
   development: 2018-06-09T07:58:38-04:00   6ac24c9829e3c45118c4b19c626bc698
 sections/featured-products.liquid:
-  development: 2018-06-14T06:01:14-04:00   27e260034ec79f42ec5cafbf1efc38f4
+  development: 2018-06-28T03:39:05-04:00   59da0aeed5afdc736ddaab85812dbe11
 sections/footer.liquid:
   development: 2018-06-27T07:50:44-04:00   5ab12df77fa9336a495f2145223a3d08
 sections/header.liquid:
-  development: 2018-06-27T07:03:05-04:00   1179aff0534e4c68854385ac335412a5
+  development: 2018-06-28T14:00:34-04:00   9a8388402db829ea35e1c23a9bec96cb
 sections/home-hero.liquid:
   development: 2018-06-07T17:03:52-04:00   c54b2c77c207acf02b546a49c89c5dbe
 sections/image-bar.liquid:
@@ -252,7 +258,7 @@ snippets/font-links.liquid:
 snippets/grid-view-item-no-match.liquid:
   development: 2018-06-06T12:48:32-04:00   179f5d75bf4c2043a6781a6647da25f7
 snippets/grid-view-item.liquid:
-  development: 2018-06-14T06:00:56-04:00   f7974b65c4631ae9be086538b9bddb42
+  development: 2018-06-28T02:08:35-04:00   4371692a78b68d8480e66892fb193b3b
 snippets/icon-amazon_payments.liquid:
   development: 2018-06-06T12:48:32-04:00   7420c4231c7dc1c1f1e91638cc3009b3
 snippets/icon-american_express.liquid:
@@ -350,11 +356,11 @@ templates/customers/activate_account.liquid:
 templates/customers/addresses.liquid:
   development: 2018-06-06T12:48:34-04:00   6f1d136f9192f41fb7fcdb721799b68f
 templates/customers/login.liquid:
-  development: 2018-06-06T12:48:34-04:00   d69480a6e4392465751604a2b0cbd5dd
+  development: 2018-06-28T13:30:43-04:00   e6797a139565dd46ca203d78db6a62a9
 templates/customers/order.liquid:
   development: 2018-06-06T12:48:34-04:00   c6d438a9daf2887600a32e99c57e5dc4
 templates/customers/register.liquid:
-  development: 2018-06-06T12:48:34-04:00   dbc4af2d8d7c6cf2cdfa8845ec0507f8
+  development: 2018-06-28T13:21:11-04:00   cd476e62d87d29edf26fdf7b8233eb3f
 templates/customers/reset_password.liquid:
   development: 2018-06-06T12:48:34-04:00   931b5fcd16551eea64b2305672135bf9
 templates/gift_card.liquid:

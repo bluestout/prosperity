@@ -1,14 +1,14 @@
 <!-- /templates/customers/register.liquid -->
 
-<div class="grid page-main--wrapper">
+<div class="grid page-main--wrapper page--account">
 
-  <div class="grid__item large--one-third push--large--one-third text-center">
+  <div class="grid__item large--one-half push--large--one-half text-center">
 
     <div class="sitewide--title-wrapper">
       <h1 class="page--title">{{ 'customer.register.title' | t }}</h1>
     </div>
 
-    <div class="form-vertical">
+    <div class="form-vertical form-contact form--account">
       {% form 'create_customer' %}
 
         {{ form.errors | default_errors }}
@@ -26,13 +26,17 @@
         <input type="password" name="customer[password]" id="CreatePassword" class="input-full{% if form.errors contains 'password' %} error{% endif %}" placeholder="{{ 'customer.register.password' | t }}">
 
         <p>
-          <input type="submit" value="{{ 'customer.register.submit' | t }}" class="btn btn--full">
+          <input type="submit" value="{{ 'customer.register.submit' | t }}" class="btn btn--secondary btn--full">
         </p>
         <a href="{{ shop.url }}">{{ 'customer.register.cancel' | t }}</a>
 
       {% endform %}
     </div>
 
+  </div>
+
+  <div class="grid__item large--one-half pull--large--one-half">
+    <img src="{{ 'create-account.jpg' | asset_url }}" alt="Prosperity Denim Fashion">
   </div>
 
 </div>
