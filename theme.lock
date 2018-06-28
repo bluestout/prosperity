@@ -94,11 +94,11 @@ assets/password-backup.scss:
 assets/password.scss.liquid:
   development: 2018-06-06T12:48:30-04:00   dfaee17b0b51479960db2158da5799c9
 assets/pdicon.svg:
-  development: 2018-06-21T17:54:41-04:00   3279a7eb3f536b4967603c3bb5b0f536
+  development: 2018-06-27T10:34:29-04:00   ccb08871f51a26d1dc60bc63399e9568
 assets/pdicon.ttf:
-  development: 2018-06-21T17:54:40-04:00   12385f56eb5801301c898db9338b55fb
+  development: 2018-06-27T10:34:28-04:00   10d80eb8bec6f620e6b8a4da62425726
 assets/pdicon.woff:
-  development: 2018-06-21T17:54:41-04:00   b3bba6b686b9a794d83765316cdd375c
+  development: 2018-06-27T10:34:29-04:00   0ec62d78512898a0e93845ad39a0d0ed
 assets/plugins.css.liquid:
   development: 2018-06-06T12:48:30-04:00   04a296f3a90cc95669eb0283a8d401c4
 assets/plugins.js:
@@ -150,9 +150,7 @@ assets/texture-leafs.png:
 assets/timber.js.liquid:
   development: 2018-06-17T04:50:37-04:00   32679d49bd2792226c8537b66e734295
 assets/timber.scss.liquid:
-  development: 2018-06-21T17:56:52-04:00   7fa07a0849ec541f66b367eacc0de452
-assets/web-bai-mobile2.jpg:
-  development: 2018-06-09T07:57:47-04:00   8247bb8902197daaed0b327aa05d6b48
+  development: 2018-06-27T11:01:33-04:00   40fa670610b8869720bdc1157edd0b4c
 config/settings_data.json:
   development: 2018-06-18T19:25:50-04:00   95bf0305df8d07cd694ceb306c8fba34
 config/settings_schema.json:
@@ -160,7 +158,7 @@ config/settings_schema.json:
 layout/password.liquid:
   development: 2018-06-06T12:48:32-04:00   22300755791105f4ece1b9cdfb0c121d
 layout/theme.liquid:
-  development: 2018-06-18T18:51:40-04:00   de42cbb8aedaa6153f152d8fa3c17569
+  development: 2018-06-27T10:42:38-04:00   cdaf406843df5e477ac2b56a5a6b2996
 locales/de.json:
   development: 2018-06-13T02:22:56-04:00   52b873af3f663d7d7a2508dbee43ee9d
 locales/en.default.json:
@@ -192,9 +190,9 @@ sections/featured-blog.liquid:
 sections/featured-products.liquid:
   development: 2018-06-14T06:01:14-04:00   27e260034ec79f42ec5cafbf1efc38f4
 sections/footer.liquid:
-  development: 2018-06-09T11:57:25-04:00   80bf1422b8266b61fee0a4aa8552a3e8
+  development: 2018-06-27T07:50:44-04:00   5ab12df77fa9336a495f2145223a3d08
 sections/header.liquid:
-  development: 2018-06-21T17:38:17-04:00   293fc8de4acc870cf86643e60ed0840f
+  development: 2018-06-27T07:03:05-04:00   1179aff0534e4c68854385ac335412a5
 sections/home-hero.liquid:
   development: 2018-06-07T17:03:52-04:00   c54b2c77c207acf02b546a49c89c5dbe
 sections/image-bar.liquid:
@@ -210,7 +208,7 @@ sections/inline-message-sitewide.liquid:
 sections/instagram.liquid:
   development: 2018-06-06T12:48:25-04:00   b5715b0a66013dc6f12c956e8343da5e
 sections/list-collections-template.liquid:
-  development: 2018-06-06T12:48:25-04:00   4f544244f2e0ca31b2ce3c5d03a661ac
+  development: 2018-06-27T10:06:57-04:00   17a44c2a3581eee4da25752aeb2863d6
 sections/map.liquid:
   development: 2018-06-09T07:57:53-04:00   6f935fbb3af18ae15ce25eec92b88959
 sections/newsletter.liquid:
@@ -242,7 +240,7 @@ sections/text-adverts.liquid:
 sections/video.liquid:
   development: 2018-06-06T12:48:26-04:00   d199bfafd300572d12522e1ce9fe047f
 snippets/ajax-cart-template.liquid:
-  development: 2018-06-06T12:48:32-04:00   cf7b648a90161b91ffdd4c9cd8efe505
+  development: 2018-06-27T11:01:02-04:00   43dd63a0bf5367bb9b0e42318c646c15
 snippets/breadcrumb.liquid:
   development: 2018-06-06T12:48:32-04:00   7bf89ebc6f2f46288fa59aa305a42514
 snippets/collection-sort-by.liquid:
@@ -296,7 +294,7 @@ snippets/icon-visa.liquid:
 snippets/live-search-result.liquid:
   development: 2018-06-06T12:48:33-04:00   651bd3ffdb9c854e2e144b30ead83ba6
 snippets/mobile-search-bar.liquid:
-  development: 2018-06-06T12:48:33-04:00   2d7b55027d5485cd598d9e11fe5b161d
+  development: 2018-06-27T07:18:27-04:00   9141d5600c7f13ae834dc7bbeb222e26
 snippets/oldIE-js.liquid:
   development: 2018-06-06T12:48:33-04:00   1197cc7109944206a600ed5caaef6a6f
 snippets/pagination.liquid:
@@ -318,7 +316,7 @@ snippets/search-bar.liquid:
 snippets/site-nav.liquid:
   development: 2018-06-06T12:48:33-04:00   8d58f51117ea014801ff47af7be29128
 snippets/social-icons.liquid:
-  development: 2018-06-06T12:48:33-04:00   35f6bf824a23b6dc9ed9d4b88ade6cc8
+  development: 2018-06-27T06:13:51-04:00   f82a48f2550a54094daa8a8c8f11d55e
 snippets/social-meta-tags.liquid:
   development: 2018-06-06T12:48:34-04:00   b80c171be3e227cf0abb92951d72888c
 snippets/socialshopwave-helper.liquid:

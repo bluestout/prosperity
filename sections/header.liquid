@@ -1,150 +1,165 @@
 <div data-section-id="{{ section.id }}" data-section-type="header-section" class="header-section--wrapper">
   <div id="NavDrawer" class="drawer drawer--left">
     <!-- begin mobile-nav -->
-    <ul class="mobile-nav">
-      <li class="mobile-nav__item mobile-nav__search">
+
+    <div class="drawer__inner">
+
+      <div class="drawer__search">
         {% include 'mobile-search-bar' %}
-      </li>
+      </div>
 
-      {% assign menu = linklists[section.settings.main_linklist] %}
-      {% for link in menu.links %}
+      <div class="drawer__links">
+    
+        <ul class="mobile-nav">
 
-        {% if link.links != blank %}
-        <li class="mobile-nav__item{% if link.active %} mobile-nav__item--active{% endif %}" aria-haspopup="true">
-          <div class="mobile-nav__has-sublist">
-            <a href="{{ link.url }}" class="mobile-nav__link">{{ link.title }}</a>
-            <div class="mobile-nav__toggle">
-              <button type="button" class="icon-fallback-text mobile-nav__toggle-open">
-                <i class="fa fa-caret-right fa-lg" aria-hidden="true"></i>
-                <span class="fallback-text">{{ 'cart.general.see_more' | t }}</span>
-              </button>
-              <button type="button" class="icon-fallback-text mobile-nav__toggle-close">
-                <i class="fa fa-caret-down fa-lg" aria-hidden="true"></i>
-                <span class="fallback-text">{{ 'cart.general.close_cart' | t | json }}</span>
-              </button>
-            </div>
-          </div>
-          <ul class="mobile-nav__sublist">
-              {% for sub_link in link.links %}
-              {% if sub_link.levels > 0 %}
-              <li class="mobile-nav__item {% if sub_link.active %} mobile-nav__item--active{% endif %}">
-                  <div class="mobile-nav__has-sublist">
-                    <a href="{{ sub_link.url }}" class="mobile-nav__link">{{ sub_link.title | escape }}</a>
-                      <div class="mobile-nav__toggle">
-                        <button type="button" class="icon-fallback-text mobile-nav__toggle-open">
-                          <i class="fa fa-caret-right fa-lg" aria-hidden="true"></i>
-                          <span class="fallback-text">{{ 'cart.general.see_more' | t }}</span>
-                        </button>
-                        <button type="button" class="icon-fallback-text mobile-nav__toggle-close">
-                          <i class="fa fa-caret-down fa-lg" aria-hidden="true"></i>
-                          <span class="fallback-text">{{ 'cart.general.close_cart' | t | json }}</span>
-                        </button>
-                      </div>
-                    </div>
-                    <ul class="mobile-nav__sublist">
-                      {% for sub_sub_link in sub_link.links %}
-                        <li class="mobile-nav__item">
-                          <a href="{{ sub_sub_link.url  }}" class="mobile-nav__link">{{ sub_sub_link.title | escape }}</a>
-                        </li>
-                      {% endfor %}
-                    </ul>
-                  </li>
-                {% else %}
-                  <li class="mobile-nav__item {% if sub_link.active %} mobile-nav__item--active{% endif %}">
-                    <a href="{{ sub_link.url }}" class="mobile-nav__link">{{ sub_link.title | escape }}</a>
-                  </li>
-                {% endif %}
-              {% endfor %}
-            </ul>
-          </li>
+          {% assign menu = linklists[section.settings.main_linklist] %}
+          {% for link in menu.links %}
 
-          {% else %}
-
-          <li class="mobile-nav__item{% if link.active %} mobile-nav__item--active{% endif %}">
-            <a href="{{ link.url }}" class="mobile-nav__link">{{ link.title }}</a>
-          </li>
-
-        {% endif %}
-
-      {% endfor %}
-
-      {% if settings.show_multiple_currencies %}
-        <li class="mobile-nav__item" aria-haspopup="true">
-          <div class="mobile-nav__has-sublist">
-            <div class="mobile-nav__toggle">
-              <button type="button" class="mobile-nav__toggle-open mobile-menu-currency-button">
-                <span class="text">Currency</span>
-                <span class="icon-fallback-text">
-                  <span class="icon">
+            {% if link.links != blank %}
+            <li class="mobile-nav__item{% if link.active %} mobile-nav__item--active{% endif %}" aria-haspopup="true">
+              <div class="mobile-nav__has-sublist">
+                <a href="{{ link.url }}" class="mobile-nav__link">{{ link.title }}</a>
+                <div class="mobile-nav__toggle">
+                  <button type="button" class="icon-fallback-text mobile-nav__toggle-open">
                     <i class="fa fa-caret-right fa-lg" aria-hidden="true"></i>
-                  </span>
-                  <span class="fallback-text">{{ 'cart.general.see_more' | t }}</span>
-                </span>
-              </button>
-              <button type="button" class="mobile-nav__toggle-close mobile-menu-currency-button">
-                <span class="text">Currency</span>
-                <span class="icon-fallback-text">
-                  <span class="icon">
+                    <span class="fallback-text">{{ 'cart.general.see_more' | t }}</span>
+                  </button>
+                  <button type="button" class="icon-fallback-text mobile-nav__toggle-close">
                     <i class="fa fa-caret-down fa-lg" aria-hidden="true"></i>
-                  </span>
-                  <span class="fallback-text">{{ 'cart.general.close_cart' | t | json }}</span>
-                </span>
-              </button>
-            </div>
-          </div>
-          <ul class="mobile-nav__sublist">
-            {% assign codes = 'USD,EUR,GBP,CAD,ARS,AUD,BBD,BDT,BSD,BHD,BRL,BOB,BND,BGN,ILS,MMK,KYD,CLP,CNY,COP,CRC,HRK,CZK,DKK,DOP,XCD,EGP,XPF,FJD,GHS,GTQ,GYD,GEL,HKD,HUF,ISK,INR,IDR,NIS,JMD,JPY,JOD,KZT,KES,KWD,LVL,LTL,MXN,MYR,MUR,MDL,MAD,MNT,MZN,ANG,NZD,NGN,NOK,OMR,PKR,PYG,PEN,PHP,PLN,QAR,RON,RUB,SAR,RSD,SCR,SGD,SYP,ZAR,KRW,LKR,SEK,CHF,TWD,THB,TZS,TTD,TRY,UAH,AED,UYU,VEB,VND,ZMK' | split: ',' %}
-            {% assign supported_codes = settings.supported_currencies | split: ' ' %}
-            <li class="mobile-nav__item">
-              <a href="#" class="mobile-nav__link mobile-menu-currency-link mobile-menu-currency-selected" data-code="{{ shop.currency }}">{{ shop.currency }}</a>
-            </li>
-            {% for code in supported_codes %}
-              {% if code != shop.currency and codes contains code %}
-                <li class="mobile-nav__item">
-                  <a href="#" class="mobile-nav__link mobile-menu-currency-link" data-code="{{ code }}">{{ code }}</a>
-                </li>
-              {% endif %}
-            {% endfor %}
-          </ul>
-        </li>
-      {% endif %}
-    </ul>
+                    <span class="fallback-text">{{ 'cart.general.close_cart' | t | json }}</span>
+                  </button>
+                </div>
+              </div>
+              <ul class="mobile-nav__sublist">
+                  {% for sub_link in link.links %}
+                  {% if sub_link.levels > 0 %}
+                  <li class="mobile-nav__item {% if sub_link.active %} mobile-nav__item--active{% endif %}">
+                      <div class="mobile-nav__has-sublist">
+                        <a href="{{ sub_link.url }}" class="mobile-nav__link">{{ sub_link.title | escape }}</a>
+                          <div class="mobile-nav__toggle">
+                            <button type="button" class="icon-fallback-text mobile-nav__toggle-open">
+                              <i class="fa fa-caret-right fa-lg" aria-hidden="true"></i>
+                              <span class="fallback-text">{{ 'cart.general.see_more' | t }}</span>
+                            </button>
+                            <button type="button" class="icon-fallback-text mobile-nav__toggle-close">
+                              <i class="fa fa-caret-down fa-lg" aria-hidden="true"></i>
+                              <span class="fallback-text">{{ 'cart.general.close_cart' | t | json }}</span>
+                            </button>
+                          </div>
+                        </div>
+                        <ul class="mobile-nav__sublist">
+                          {% for sub_sub_link in sub_link.links %}
+                            <li class="mobile-nav__item">
+                              <a href="{{ sub_sub_link.url  }}" class="mobile-nav__link">{{ sub_sub_link.title | escape }}</a>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      </li>
+                    {% else %}
+                      <li class="mobile-nav__item {% if sub_link.active %} mobile-nav__item--active{% endif %}">
+                        <a href="{{ sub_link.url }}" class="mobile-nav__link">{{ sub_link.title | escape }}</a>
+                      </li>
+                    {% endif %}
+                  {% endfor %}
+                </ul>
+              </li>
 
+              {% else %}
 
-      {% comment %}
-        If customer accounts are enabled, provide login and create account links
-      {% endcomment %}
-      {% if shop.customer_accounts_enabled %}
+              <li class="mobile-nav__item{% if link.active %} mobile-nav__item--active{% endif %}">
+                <a href="{{ link.url }}" class="mobile-nav__link">{{ link.title }}</a>
+              </li>
 
-      <span class="mobile-nav-header">{{ 'layout.customer.account' | t }}</span>
-
-	  <ul class="mobile-nav">
-
-        {% if customer %}
-          <li class="mobile-nav__item">
-            {% if customer.first_name != blank %}
-              {% capture first_name %}{{ customer.first_name }}{% endcapture %}
-              <a href="/account">{{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}</a>
-            {% else %}
-              <a href="/account">{{ 'layout.customer.account' | t }}</a>
             {% endif %}
-          </li>
-          <li class="mobile-nav__item">
-            {{ 'layout.customer.log_out' | t | customer_logout_link }}
-          </li>
-        {% else %}
-          <li class="mobile-nav__item">
-            {{ 'layout.customer.log_in' | t | customer_login_link }}
-          </li>
-          <li class="mobile-nav__item">
-            {{ 'layout.customer.create_account' | t | customer_register_link }}
-          </li>
-        {% endif %}
 
-	</ul>
+          {% endfor %}
+
+          {% if settings.show_multiple_currencies %}
+            <li class="mobile-nav__item" aria-haspopup="true">
+              <div class="mobile-nav__has-sublist">
+                <div class="mobile-nav__toggle">
+                  <button type="button" class="mobile-nav__toggle-open mobile-menu-currency-button">
+                    <span class="text">Currency</span>
+                    <span class="icon-fallback-text">
+                      <span class="icon">
+                        <i class="fa fa-caret-right fa-lg" aria-hidden="true"></i>
+                      </span>
+                      <span class="fallback-text">{{ 'cart.general.see_more' | t }}</span>
+                    </span>
+                  </button>
+                  <button type="button" class="mobile-nav__toggle-close mobile-menu-currency-button">
+                    <span class="text">Currency</span>
+                    <span class="icon-fallback-text">
+                      <span class="icon">
+                        <i class="fa fa-caret-down fa-lg" aria-hidden="true"></i>
+                      </span>
+                      <span class="fallback-text">{{ 'cart.general.close_cart' | t | json }}</span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+              <ul class="mobile-nav__sublist">
+                {% assign codes = 'USD,EUR,GBP,CAD,ARS,AUD,BBD,BDT,BSD,BHD,BRL,BOB,BND,BGN,ILS,MMK,KYD,CLP,CNY,COP,CRC,HRK,CZK,DKK,DOP,XCD,EGP,XPF,FJD,GHS,GTQ,GYD,GEL,HKD,HUF,ISK,INR,IDR,NIS,JMD,JPY,JOD,KZT,KES,KWD,LVL,LTL,MXN,MYR,MUR,MDL,MAD,MNT,MZN,ANG,NZD,NGN,NOK,OMR,PKR,PYG,PEN,PHP,PLN,QAR,RON,RUB,SAR,RSD,SCR,SGD,SYP,ZAR,KRW,LKR,SEK,CHF,TWD,THB,TZS,TTD,TRY,UAH,AED,UYU,VEB,VND,ZMK' | split: ',' %}
+                {% assign supported_codes = settings.supported_currencies | split: ' ' %}
+                <li class="mobile-nav__item">
+                  <a href="#" class="mobile-nav__link mobile-menu-currency-link mobile-menu-currency-selected" data-code="{{ shop.currency }}">{{ shop.currency }}</a>
+                </li>
+                {% for code in supported_codes %}
+                  {% if code != shop.currency and codes contains code %}
+                    <li class="mobile-nav__item">
+                      <a href="#" class="mobile-nav__link mobile-menu-currency-link" data-code="{{ code }}">{{ code }}</a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </li>
+          {% endif %}
+        </ul>
+
+      </div>
+        
+
+      <div class="drawer__account">
+
+          {% comment %}
+            If customer accounts are enabled, provide login and create account links
+          {% endcomment %}
+          {% if shop.customer_accounts_enabled %}
+
+          <span class="mobile-nav-header">{{ 'layout.customer.account' | t }}</span>
+
+        <ul class="mobile-nav">
+
+            {% if customer %}
+              <li class="mobile-nav__item">
+                {% if customer.first_name != blank %}
+                  {% capture first_name %}{{ customer.first_name }}{% endcapture %}
+                  <a href="/account">{{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}</a>
+                {% else %}
+                  <a href="/account">{{ 'layout.customer.account' | t }}</a>
+                {% endif %}
+              </li>
+              <li class="mobile-nav__item">
+                {{ 'layout.customer.log_out' | t | customer_logout_link }}
+              </li>
+            {% else %}
+              <li class="mobile-nav__item">
+                {{ 'layout.customer.log_in' | t | customer_login_link }}
+              </li>
+              <li class="mobile-nav__item">
+                {{ 'layout.customer.create_account' | t | customer_register_link }}
+              </li>
+            {% endif %}
+
+      </ul>
 
       {% endif %}
     <!-- //mobile-nav -->
+
+      </div>
+
+    </div>
+
   </div>
 
 
@@ -483,7 +498,9 @@
         <div class="grid__item one-sixth">
           <div class="site-nav--mobile">
             <button type="button" class="icon-fallback-text site-nav__link js-drawer-open-left-link" aria-controls="NavDrawer" aria-expanded="false">
-              <i class="fa fa-bars fa-2x"></i>
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
               <span class="fallback-text">{{ 'layout.navigation.menu' | t }}</span>
             </button>
           </div>
@@ -518,7 +535,7 @@
           <div class="site-nav--mobile">
             <a href="/cart" class="{% if settings.ajax_cart_method == 'drawer' %}js-drawer-open-right-link {% endif %}site-nav__link" aria-controls="CartDrawer" aria-expanded="false">
               <span class="icon-fallback-text">
-                <i class="fa fa-shopping-cart fa-2x"></i>
+                <i class="pdicon-bag"></i>
                 <span class="site-header__cart-indicator {% if cart.item_count == 0 %}hide{% endif %}"></span>
                 <span class="fallback-text">{{ 'layout.cart.title' | t }}</span>
               </span>

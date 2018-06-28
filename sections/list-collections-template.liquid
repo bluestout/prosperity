@@ -14,13 +14,13 @@
 
 {% case section.settings.items_per_row %}
   {% when 2 %}
-  	{% capture grid_item_width %}large--one-half medium--one-half small--one-half{% endcapture %}
+  	{% capture grid_item_width %}large--one-half medium--one-half small--one-whole{% endcapture %}
   {% when 3 %}
   	{% capture grid_item_width %}large--one-third medium--one-half small--one-whole{% endcapture %}
   {% when 4 %}
-  	{% capture grid_item_width %}large--one-quarter medium--one-half small--one-half{% endcapture %}
+  	{% capture grid_item_width %}large--one-quarter medium--one-half small--one-whole{% endcapture %}
   {% when 5 %}
-    {% capture grid_item_width %}large--one-fifth medium--one-half small--one-half{% endcapture %}
+    {% capture grid_item_width %}large--one-fifth medium--one-half small--one-whole{% endcapture %}
 {% endcase %}
 
 {% case section.settings.layout %}
@@ -117,9 +117,10 @@
           <div class="grid__item {{ grid_item_width }}">
             <div class="grid-view-item">
               <a href="{{ collection.url }}" class="grid__image" title="{{ 'collections.general.link_title' | t: title: collection_title }}">
-                <img src="{{ collection.image | img_url: 'large' }}" alt="{{ collection_title }}" class="list-collections--indiv-collection-image" />
+                <img src="{{ collection.image | img_url: 'master' }}" alt="{{ collection_title }}" class="list-collections--indiv-collection-image" />
+                <div class="btn btn--outline btn-shopcollection">Shop Collection</div>
               </a>
-              <h3 class="list-collections--indiv-collection-title">{{ collection_title }}</h3>
+              <p class="list-collections--indiv-collection-title">{{ collection_title }}</p>
             </div>
           </div>
 
@@ -142,9 +143,10 @@
         <div class="grid__item {{ grid_item_width }}">
           <div class="grid-view-item">
             <a href="{{ collection.url }}" class="grid__image" title="{{ 'collections.general.link_title' | t: title: collection_title }}">
-              <img src="{{ collection.image | img_url: 'large' }}" alt="{{ collection_title }}" class="list-collections--indiv-collection-image" />
+              <img src="{{ collection.image | img_url: 'master' }}" alt="{{ collection_title }}" class="list-collections--indiv-collection-image" />
+              <div class="btn btn--outline btn-shopcollection">Shop Collection</div>
             </a>
-            <h3 class="list-collections--indiv-collection-title">{{ collection_title }}</h3>
+            <p class="list-collections--indiv-collection-title">{{ collection_title }}</p>
           </div>
         </div>
 

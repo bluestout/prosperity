@@ -80,7 +80,7 @@
                   </div>
 
                 <button type="button" class="ajaxcart__qty-remove icon-fallback-text" data-id="{{id}}" data-line="{{line}}">
-                  <i class="fa fa-times" aria-hidden="true"></i>
+                  <i class="pdicon-x" aria-hidden="true"></i>
                   <span class="fallback-text">X</span>
                 </button>
 
@@ -111,9 +111,9 @@
             <p class="ajaxcart__savings text-center"><em>{{{totalCartDiscount}}}</em></p>
           {{/if}}
         </div>
-        <p class="text-center">{% endraw %}{{ 'cart.general.shipping_at_checkout' | t }}{% raw %}
+        <p class="ajaxcart__taxes text-center">{% endraw %}{{ 'cart.general.shipping_at_checkout' | t }}{% raw %}
         </p>
-        <button type="submit" class="cart__checkout" name="checkout">
+        <button type="submit" class="btn btn--primary cart__checkout" name="checkout">
           {% endraw %}{{ 'cart.general.checkout' | t }}{% raw %}
         </button>
         {% endraw %}{% if additional_checkout_buttons %}

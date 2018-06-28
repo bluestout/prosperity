@@ -11,7 +11,7 @@
 
 <footer class="site-footer{% if template contains 'product' %}{% if settings.related_products_enable %}{% else %} product-sticker-stop{% endif %}{% endif %} footer-alignment--{{ section.settings.alignment }}">
 	<div class="wrapper">
-		<div class="grid">
+		<div>
 			{% for block in section.blocks %}
 
 				{% case block.type %}
@@ -57,7 +57,7 @@
 
 
 
-		<div class="grid">
+		<div class="grid--menus">
 			{% for block in section.blocks %}
 
 				{% case block.type %}
@@ -65,7 +65,7 @@
 					{% when 'menu' %}
 
 						{% assign menu = linklists[block.settings.footer_linklist] %}
-						<div class="large--one-whole medium--one-whole small--one-whole links-footer">
+						<div class="grid__menu links-footer">
 							<div class="h3 footer-header">{{ block.settings.menu_title | escape }}</div>
 							<ul class="footer-content">
 								{% for link in menu.links %}
@@ -93,7 +93,7 @@
 		</div>
 
 
-		<div class="grid">
+		<div>
 			{% for block in section.blocks %}
 
 				{% case block.type %}
@@ -111,7 +111,7 @@
 		</div>
 
 
-		<div class="grid">
+		<div>
 			{% for block in section.blocks %}
 
 				{% case block.type %}
@@ -146,7 +146,7 @@
 
 
 
-		<div class="grid">
+		<div>
 			{% for block in section.blocks %}
 
 				{% case block.type %}
@@ -164,7 +164,7 @@
 		</div>
 </div>
 
-      <div class="grid bottom--footer">
+      <div class="bottom--footer">
 
 				{% if section.settings.footer_text %}
 
