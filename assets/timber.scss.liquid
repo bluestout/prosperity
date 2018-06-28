@@ -5383,7 +5383,7 @@ h3.homepage-blog--title{
 }
 .product-additional__bg {
   background-color: #fff;
-  padding: 90px 20px;
+  padding: 90px 35px;
   position: relative;
   z-index: 1;
 }
@@ -5394,6 +5394,10 @@ h3.homepage-blog--title{
 
   .nav-tabs {
     margin-bottom: 45px;
+  }
+
+  h4 {
+    margin-bottom: 25px;
   }
 }
 .intro {
@@ -8103,7 +8107,6 @@ form#contact_form #newsletter-wrapper #newsletter_submit{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 25px;
 
   h3 {
     font-size: 1.6em;
@@ -8112,7 +8115,8 @@ form#contact_form #newsletter-wrapper #newsletter_submit{
   }
 }
 .page-boxes__inner {
-  max-width: 320px;
+  max-width: 370px;
+  padding: 25px;
 }
 
 .page-message {
@@ -8432,6 +8436,14 @@ form#contact_form #newsletter-wrapper #newsletter_submit{
   }
 }
 
+.owl-theme .owl-dots .owl-dot span {
+  width: 5px;
+  height: 5px;
+  background: rgba(0,0,0,.3);
+}
+.owl-theme .owl-dots .owl-dot.active span {  
+  background: #000;
+}
 
 
 
@@ -8500,6 +8512,57 @@ form#contact_form #newsletter-wrapper #newsletter_submit{
   .ajaxcart__taxes {
     font-size: .8em;
   }
+
+  .product-sticky {
+    position: static !important;
+  }
+  .product-details-wrapper {
+    padding: 0;
+    padding-bottom: 15px;
+  }
+  
+  .product-single {
+    display: flex;
+    flex-direction: column;
+
+    .product-single__img {
+      order: 1;
+    }
+
+    .product-single__desc {
+      order: 2;
+    }
+  }
+
+  .inspirational-message {
+    padding: 0 20px;
+
+    h5, .h5 {
+      font-size: 1.3em;
+    }
+  }
+
+  .nav-tabs a {
+    display: block;
+    min-width: 120px;
+    padding: 12px 8px;
+  }
+
+  .page-boxes-head h2, 
+  .page-boxes-head .h2 {
+    font-size: 5em;
+  }
+
+  .mobile-nav-bar-wrapper {
+
+    .site-header__cart-indicator {
+      height: 7px;
+      width: 7px;
+      right: -7px;
+    }
+  }
+  
+
 }
 
 @media only screen and (max-width: 767px) {
@@ -8562,10 +8625,112 @@ form#contact_form #newsletter-wrapper #newsletter_submit{
     margin-top: 0;
   }
 
-  .owl-theme .owl-dots .owl-dot span {
-    width: 5px;
-    height: 5px;
+  .page-heading {
+
+    h1, .h1 {
+      font-size: 4em;
+      line-height: 1em;
+    }
   }
+
+  .page-message,
+  .page__message {
+    margin: 45px auto;
+    padding: 0 20px;
+
+    p {
+      font-size: 1.3em;
+    }
+  }
+
+  .page-boxes {
+    flex-direction: column;
+  }
+  .page-boxes__inner {
+    padding-top: 45px;
+    padding-bottom: 65px;
+  }
+  .page-boxes__copy {
+
+    h3, .h3 {
+      margin-bottom: 30px;
+    }
+  }
+
+  .page--faqs {
+
+    .page-heading__inner {
+      top: 50%;
+    }
+  }
+  .faqs {
+    padding: 35px 15px;
+    top: -50px;
+  }
+  .list-faqs {
+
+    dt {
+      padding: 28px 8px;
+      padding-right: 60px;
+
+      &::before {
+        top: 41px;
+      }
+
+      &::after {
+        top: 30px;
+      }
+      
+    }
+
+    dd {
+      padding: 12px;
+      padding-left: 50px;
+      margin-left: 0;
+    }
+
+  }
+
+  .page--static {
+
+    h1.page--title {
+      padding-bottom: 0;
+    }
+
+    .page__inner {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+
+  .page--contact {
+
+    .page__inner {
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
+  .contact {
+    flex-direction: column;
+  }
+  .contact__form {
+    padding-right: 0;
+    width: 100%;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .contact__side {
+    padding-left: 0;
+    padding-top: 35px;
+  }
+  .form-contact {
+
+    input:not(.btn), textarea {
+      font-size: 14px;
+    }
+  }
+
 
 }
 
@@ -8599,5 +8764,39 @@ form#contact_form #newsletter-wrapper #newsletter_submit{
       margin: 0 auto;
       margin-bottom: -1px;
     }
+  }
+
+  .page-heading {
+
+    h1, .h1 {
+      font-size: 3em;
+    }
+  }
+  .page-boxes-head {
+
+    h2, .h2 {
+      font-size: 3em;
+    }
+
+    p {
+      margin-top: -14px;
+    }
+  }
+
+  .page-message,
+  .page__message {
+    margin: 25px auto;
+
+    p {
+      font-size: 1.15em;
+    }
+  }
+
+  .product-additional__bg {
+    padding: 45px 25px;
+  }
+
+  .contact__form {
+    max-width: inherit;
   }
 }

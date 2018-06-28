@@ -2,11 +2,11 @@
 assets/FontAwesome.otf:
   development: 2018-06-06T12:48:27-04:00   5dc41d8fe329a22fa1ee9225571c843e
 assets/about-1.jpg:
-  development: 2018-06-18T16:04:27-04:00   23e7bfdf0397973ff633f19a02faf224
+  development: 2018-06-28T08:27:43-04:00   093c71b17205cf235dff9dc97d178878
 assets/about-2.jpg:
-  development: 2018-06-18T16:04:38-04:00   d1c7fa5484fa84bf120488f19ebe9a0c
+  development: 2018-06-28T08:30:08-04:00   62dcebf8a98b8546f0ad52e88694c635
 assets/about-3.jpg:
-  development: 2018-06-18T16:04:47-04:00   fc16e52e042cf5b9b3c6a64205b457d2
+  development: 2018-06-28T08:29:25-04:00   3d6e485410e807688b16db1dd7f95029
 assets/ajax-cart.js.liquid:
   development: 2018-06-06T12:48:27-04:00   004c73323bfa1870e3ba30056a8b6d59
 assets/blog-1.jpg:
@@ -150,7 +150,7 @@ assets/texture-leafs.png:
 assets/timber.js.liquid:
   development: 2018-06-17T04:50:37-04:00   32679d49bd2792226c8537b66e734295
 assets/timber.scss.liquid:
-  development: 2018-06-27T11:01:33-04:00   40fa670610b8869720bdc1157edd0b4c
+  development: 2018-06-28T09:08:40-04:00   1bc7ac85d95e7128fa00fa48559bd459
 config/settings_data.json:
   development: 2018-06-18T19:25:50-04:00   95bf0305df8d07cd694ceb306c8fba34
 config/settings_schema.json:
@@ -226,7 +226,7 @@ sections/page-heading.liquid:
 sections/password-template.liquid:
   development: 2018-06-06T12:48:26-04:00   39eda08bce70a7ea65e67ffce8c8d32d
 sections/product-template.liquid:
-  development: 2018-06-17T04:54:16-04:00   5212fa9d669d4d346ca7d6209593512e
+  development: 2018-06-28T08:12:14-04:00   a6565e7c5c683cf9e0a60970050bb9c4
 sections/products-block.liquid:
   development: 2018-06-10T04:28:49-04:00   adc9a6a15fa988e5d72e6ab84079b948
 sections/rich-text.liquid:
