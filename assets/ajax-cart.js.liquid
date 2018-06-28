@@ -115,6 +115,41 @@ ShopifyAPI.addItemFromForm = function(form, callback, errorCallback) {
   jQuery.ajax(params);
 };
 
+ShopifyAPI.addItemFromList = function(elm, callback, errorCallback) {
+	var $body = $(document.body),
+	params = {
+		type: 'POST',
+		url: '/cart/add.js',
+		data: {quantity: 1, id: jQuery(elm).data('id')},
+		dataType: 'json',
+		beforeSend: function(jqxhr, settings) {
+	  	$body.trigger('beforeAddItem.ajaxCart', elm);
+    },
+    success: function(line_item) {
+    	if ((typeof callback) === 'function') {
+        callback(line_item, elm);
+      }
+      else {
+        ShopifyAPI.onItemAdded(line_item, elm);
+      }
+      $body.trigger('afterAddItem.ajaxCart', [line_item, elm]);
+    },
+    error: function(XMLHttpRequest, textStatus) {
+    	if ((typeof errorCallback) === 'function') {
+        errorCallback(XMLHttpRequest, textStatus);
+      }
+      else {
+        ShopifyAPI.onError(XMLHttpRequest, textStatus);
+      }
+      $body.trigger('errorAddItem.ajaxCart', [XMLHttpRequest, textStatus]);
+    },
+    complete: function(jqxhr, text) {
+      $body.trigger('completeAddItem.ajaxCart', [this, jqxhr, text]);
+    }
+	};
+	jQuery.ajax(params);
+};
+
 // Get from cart.js returns the cart in JSON
 ShopifyAPI.getCart = function(callback) {
   $(document.body).trigger('beforeGetCart.ajaxCart');
@@ -177,7 +212,7 @@ var ajaxCart = (function(module, $) {
   var $formContainer, $addToCart, $cartCountSelector, $cartCostSelector, $cartContainer, $drawerContainer;
 
   // Private functions
-  var updateCountPrice, formOverride, itemAddedCallback, itemErrorCallback, cartUpdateCallback, buildCart, cartCallback, adjustCart, adjustCartCallback, createQtySelectors, qtySelectors, validateQty;
+  var updateCountPrice, formOverride, itemAddedCallback, itemErrorCallback, cartUpdateCallback, buildCart, cartCallback, adjustCart, adjustCartCallback, createQtySelectors, qtySelectors, validateQty, ajaxAddToCart;
 
   /*============================================================================
     Initialise the plugin and define global options
@@ -224,6 +259,7 @@ var ajaxCart = (function(module, $) {
 
     // Run this function in case we're using the quantity selector outside of the cart
     adjustCart();
+    ajaxAddToCart();
   };
 
   loadCart = function () {
@@ -240,6 +276,13 @@ var ajaxCart = (function(module, $) {
       }
     }
   };
+
+  ajaxAddToCart = function() {
+  	$('body').on('click', '.product-grid--ajax-add-cart', function(evt) {
+  		evt.preventDefault();
+  		ShopifyAPI.addItemFromList(evt.target, itemAddedCallback, itemErrorCallback);
+  	});
+	};
 
   formOverride = function () {
     $formContainer.on('submit', function(evt) {
