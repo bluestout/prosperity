@@ -29,16 +29,13 @@
     {% if section.settings.quick_shop_enable %}
       <div class="shop-now-wrapper">
         <div class="sizes-picker">
-          <a href="#">2</a>
-          <a href="#">4</a>
-          <a href="#">6</a>
-          <a href="#">8</a>
-          <a href="#" class="active">10</a>
-          <a href="#">12</a>
-          <a href="#">14</a>
-          <a href="#">16</a>
-          <a href="#"></a>
-          <a href="#"></a>
+        	{% for variant in product.variants %}
+        	{% unless product.options.size == 1 and product.variants[0].title == 'Default Title' %}
+	        	{% if variant.available %}
+	        	<a href="#" data-id="{{variant.id}}" class="product-grid--ajax-add-cart">{{variant.title}}</a>
+	        	{% endif %}
+	        {% endunless %}
+        	{% endfor %}
         </div>
         <a class="btn btn-quickshop shop-now-button" href="{{ product.url | within: collection }}">{{ 'products.product.quick_shop' | t }}</a>
       </div>
