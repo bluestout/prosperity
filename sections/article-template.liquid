@@ -22,89 +22,99 @@
 
 
 
-  <div>
-    <h1 class="page--title">{{ article.title }}</h1>
-  </div>
+  
 
-<div class="grid blog-main--wrapper">
+<div class="grid blog-main--wrapper blog-article--wrapper">
 
-  <article class="grid__item large--three-quarters" itemscope itemtype="http://schema.org/Article">
+  <article class="grid__item large--one-whole blog-article--content" itemscope itemtype="http://schema.org/Article">
 
     <div class="rte" itemprop="articleBody">
-		{% if article.image %}
-			<div class="article--image-wrapper">
-			    {{ article | img_url: '1200x' | img_tag: article.title }}
-		    </div>
-		{% endif %}
+      {% if article.image %}
+        <div class="article--image-wrapper">
+            {{ article | img_url: '1200x' | img_tag: article.title }}
+          </div>
+      {% endif %}
 
-      {{ article.content }}
+      <div>
+        <h1 class="page--title">{{ article.title }}</h1>
+      </div>
+
+      <div class="blog-article-body">
+        {{ article.content }}
+
+
+        {% if settings.social_sharing_blog %}
+          {% if template contains 'article' or template contains 'blog' %}
+
+        {% capture permalinkURL %}{{ shop.url }}{{ article.url }}{% endcapture %}
+        {% capture shareTitle %}{{ article.title }}{% endcapture %}
+        {% capture shareImage %}{{ article | img_url: '1200x' }}{% endcapture %}
+
+      {% elsif template contains 'product' %}
+
+        {% capture permalinkURL %}{{ shop.url }}{{ product.url }}{% endcapture %}
+        {% capture shareTitle %}{{ product.title }}{% endcapture %}
+        {% capture shareImage %}{{ product.featured_image | product_img_url: 'original' }}{% endcapture %}
+
+      {% endif %}
+
+      <div id="sharing" class="social-sharing is-clean" data-permalink="{{ permalinkURL }}">
+
+        {% if settings.share_facebook %}
+        <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
+        <a target="_blank" href="//www.facebook.com/sharer.php?u={{ permalinkURL }}" class="share-facebook">
+        <span class="icon icon-facebook" aria-hidden="true"></span>
+        <span class="share-title">Share</span>
+        </a>
+        {% endif %}
+
+        {% if settings.share_twitter %}
+        <!-- https://dev.twitter.com/docs/intents -->
+        <a target="_blank" href="//twitter.com/share?url={{ permalinkURL }}&amp;text={{ shareTitle }}" class="share-twitter">
+        <span class="icon icon-twitter" aria-hidden="true"></span>
+        <span class="share-title">Tweet</span>
+        </a>
+        {% endif %}
+
+        {% if settings.share_pinterest %}
+        <!--
+        https://developers.pinterest.com/pin_it/
+        Pinterest get data from the same Open Graph meta tags Facebook uses
+        -->
+        <a target="_blank" href="//pinterest.com/pin/create/button/?url={{ permalinkURL }}&amp;media={{ shareImage }}&amp;description={{ product.title | escape }}" class="share-pinterest">
+        <span class="icon icon-pinterest" aria-hidden="true"></span>
+        <span class="share-title">Pin it</span>
+        </a>
+        {% endif %}
+
+      </div>
+        {% endif %}
+      </div>
+
     </div>
 
-    {% if settings.social_sharing_blog %}
-    		{% if template contains 'article' or template contains 'blog' %}
-
-    	{% capture permalinkURL %}{{ shop.url }}{{ article.url }}{% endcapture %}
-    	{% capture shareTitle %}{{ article.title }}{% endcapture %}
-    	{% capture shareImage %}{{ article | img_url: '1200x' }}{% endcapture %}
-
-    {% elsif template contains 'product' %}
-
-    	{% capture permalinkURL %}{{ shop.url }}{{ product.url }}{% endcapture %}
-    	{% capture shareTitle %}{{ product.title }}{% endcapture %}
-    	{% capture shareImage %}{{ product.featured_image | product_img_url: 'original' }}{% endcapture %}
-
-    {% endif %}
-
-    <div id="sharing" class="social-sharing is-clean" data-permalink="{{ permalinkURL }}">
-
-    	{% if settings.share_facebook %}
-    	<!-- https://developers.facebook.com/docs/plugins/share-button/ -->
-    	<a target="_blank" href="//www.facebook.com/sharer.php?u={{ permalinkURL }}" class="share-facebook">
-    	<span class="icon icon-facebook" aria-hidden="true"></span>
-    	<span class="share-title">Share</span>
-    	</a>
-    	{% endif %}
-
-    	{% if settings.share_twitter %}
-    	<!-- https://dev.twitter.com/docs/intents -->
-    	<a target="_blank" href="//twitter.com/share?url={{ permalinkURL }}&amp;text={{ shareTitle }}" class="share-twitter">
-    	<span class="icon icon-twitter" aria-hidden="true"></span>
-    	<span class="share-title">Tweet</span>
-    	</a>
-    	{% endif %}
-
-    	{% if settings.share_pinterest %}
-    	<!--
-    	https://developers.pinterest.com/pin_it/
-    	Pinterest get data from the same Open Graph meta tags Facebook uses
-    	-->
-    	<a target="_blank" href="//pinterest.com/pin/create/button/?url={{ permalinkURL }}&amp;media={{ shareImage }}&amp;description={{ product.title | escape }}" class="share-pinterest">
-    	<span class="icon icon-pinterest" aria-hidden="true"></span>
-    	<span class="share-title">Pin it</span>
-    	</a>
-    	{% endif %}
-
-    </div>
-    	{% endif %}
+    
 
     {% comment %}
       Create links to the next and previous articles, if available.
     {% endcomment %}
-    {% if blog.next_article or blog.previous_article %}
-      <hr>
-      <p class="clearfix">
-        {% if blog.previous_article %}
-          <span class="left">
-            &larr; {{ 'blogs.article.older_post' | t | link_to: blog.previous_article }}
-          </span>
-        {% endif %}
-        {% if blog.next_article %}
-          <span class="right">
-            {{ 'blogs.article.newer_post' | t | link_to: blog.next_article }} &rarr;
-          </span>
-        {% endif %}
-      </p>
-    {% endif %}
+    <div class="blog-prevnext">
+      {% if blog.next_article or blog.previous_article %}
+        
+        <p class="clearfix">
+          {% if blog.previous_article %}
+            <span class="left">
+              &larr; {{ 'blogs.article.older_post' | t | link_to: blog.previous_article }}
+            </span>
+          {% endif %}
+          {% if blog.next_article %}
+            <span class="right">
+              {{ 'blogs.article.newer_post' | t | link_to: blog.next_article }} &rarr;
+            </span>
+          {% endif %}
+        </p>
+      {% endif %}
+    </div>
 
     {% if blog.comments_enabled? %}
 	{% if number_of_comments > 0 %}
@@ -252,7 +262,7 @@
 
   </article>
 
-  <aside class="grid__item large--one-quarter" role="complementary">
+  <aside class="grid__item large--one-whole" role="complementary">
 
     {% if section.settings.blog-sidebar-image %}
       {% if section.settings.blog-sidebar-link %}
@@ -268,13 +278,19 @@
     {% endif %}
 
     {% if section.settings.show_recent_posts %}
-      <div class="h4">{{ 'blogs.sidebar.recent_articles' | t }}</div>
+      <div class="h4 text-center">{{ 'blogs.sidebar.recent_articles' | t }}</div>
       <ul class="no-bullets blog-sidebar--recent-articles">
         {% for article in blogs[blog.handle].articles limit:6 %}
           <li>
-            <a href="{{ article.url }}">{{ article.title }}</a>
-            <br>
-            <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>
+            <a href="{{ article.url }}">
+            <div class="recent-articles-img">
+              <img src="{{ article | img_url: 'master' }}" alt="{{ article.title }}">
+            </div>
+            <div class="recent-articles-body">
+              <h3>{{ article.title }}</h3>
+              <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>
+            </div>
+            </a>
           </li>
         {% endfor %}
       </ul>

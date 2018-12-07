@@ -127,12 +127,10 @@
     					{% assign shop_by_tags_2_list_tags = block.settings.shop_by_tags_2_list_tags %}
 						{%- case block.type %}
 						{% when 'block_filter_size' %}
-						<div class="sidebar-custom sidebar-tag size">
+						<div class="sidebar-custom sidebar-tag size collection-sidebar-filter">
 					      {% assign tags = shop_by_tags_2_list_tags | split: ',' %}
 					      <div class="title">
-					        <h3>
-					          <span>{{ shop_by_tags_2_title }}</span>
-					        </h3>
+					        <label>{{ shop_by_tags_2_title }}</label>
 					      </div>
 					      <div class="content">
 					        <ul class="widget-content">
@@ -149,12 +147,10 @@
 					      </div>
 					    </div>
 					    {% when 'block_filter_color' %}
-					    <div class="sidebar-custom sidebar-tag color">
+					    <div class="sidebar-custom sidebar-tag color collection-sidebar-filter">
 					      {% assign tags = shop_by_tags_1_list_tags | split: ',' %}
 					      <div class="title">
-					        <h3>
-					          <span>{{ shop_by_tags_1_title }}</span>
-					        </h3>
+					        <label>{{ shop_by_tags_1_title }}</label>
 					      </div>
 					      <div class="content">
 					        <ul class="widget-content">

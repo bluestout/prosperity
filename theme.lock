@@ -14,7 +14,7 @@ assets/blog-1.jpg:
 assets/blog-2.jpg:
   development: 2018-06-07T17:11:48-04:00   2984f67f2f7b4671b482809e59e2bdc4
 assets/blog-3.jpg:
-  development: 2018-06-07T17:12:07-04:00   9ab4b6bbbe131c21a8473c0311c771bf
+  development: 2018-06-29T05:10:35-04:00   748ecf79e8047e3e26501b6c2f02936a
 assets/canela-webfont.woff:
   development: 2018-06-07T15:49:18-04:00   b5be2647b7021bbb7454c9276120bbfb
 assets/canela-webfont.woff2:
@@ -154,7 +154,7 @@ assets/texture-leafs.png:
 assets/timber.js.liquid:
   development: 2018-06-17T04:50:37-04:00   32679d49bd2792226c8537b66e734295
 assets/timber.scss.liquid:
-  development: 2018-06-28T14:51:29-04:00   9809c9ca9e99e8d38f20d1e07feb4f6c
+  development: 2018-06-29T05:58:58-04:00   a267130882de08692faf24f66423ee45
 assets/web-bai-mobile2.jpg:
   development: 2018-06-09T07:57:47-04:00   8247bb8902197daaed0b327aa05d6b48
 config/settings_data.json:
@@ -178,7 +178,7 @@ locales/pt-PT.json:
 sections/announcement-bar.liquid:
   development: 2018-06-06T12:48:24-04:00   931a73bc45ce9424addb26b7ef89fb64
 sections/article-template.liquid:
-  development: 2018-06-06T12:48:24-04:00   52ca5b718b0db16abb51e6139c6164d9
+  development: 2018-06-29T05:19:20-04:00   c06aa6033b234b024cba0c54816d9aac
 sections/blog-template.liquid:
   development: 2018-06-28T14:38:49-04:00   ee3e1fefcbb4fcd089e22e90779612e2
 sections/cart-template.liquid:
